@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around; 
+    background-color: black;
     width: 100%; 
 }
 
@@ -10,6 +11,8 @@
     list-style: none;
 }
 
-.navbar-links li { 
-    margin-right: 30px; 
+.navbar-link {
+    margin-right: 20px;
+    color: white; 
+    
 }
