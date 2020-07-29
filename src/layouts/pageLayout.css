@@ -30,21 +30,21 @@ a {
   text-decoration: none;
 }
 
-/* a:link,
+a:link,
 a:visited,
 a:hover,
 a:active {
-  color: unset;
-} */
+  color: inherit;
+}
 
-a {
+/* a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
   outline-width: 0;
-}
+} */
 
 #faux-root {
   display: flex;

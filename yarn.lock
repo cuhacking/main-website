@@ -1511,6 +1511,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:^0.2.30":
+  version: 0.2.30
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.30"
+  checksum: 3cfb72b3bc7f6471256bed75c9bfde4f19e5a7956ab01c9022289a3e675e27b8691b8cb7fab63a6725e8e3eab47da975e76b834e4c35d9a8a71d3e7b279cc196
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^1.2.30":
+  version: 1.2.30
+  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.30"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.30
+  checksum: 56ab4184eca91b013a7d8d804e8efb3ce93969a8514f788ae61412f4040c9263fb72d7e3d5169c310020c44baca6001108f3350244a150e104c6c39fafe09c6f
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-brands-svg-icons@npm:^5.14.0":
+  version: 5.14.0
+  resolution: "@fortawesome/free-brands-svg-icons@npm:5.14.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.30
+  checksum: 92749c84a25aefcce846c51719f3c18c2e76d8eed2c923e998bd26477e7fd3568a40a6b0d17d67efc8157bb78f22037c79f1d410522722fb059f1464127e0740
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^5.14.0":
+  version: 5.14.0
+  resolution: "@fortawesome/free-solid-svg-icons@npm:5.14.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.30
+  checksum: 304999f6a65d2eea82bf9dcfa1e982765c4f9ab48085b27eee4990e0d13c12147278991ed75905474ae7077283657517243a5ef7dff78336c7e9261b6f68a49b
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-fontawesome@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@fortawesome/react-fontawesome@npm:0.1.11"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ^1.2.20
+    react: 16.x
+  checksum: ede137d0f7d205295d30caeaabb1651f2d60ee2adcefda14578e4259c2c80e8ca47a4f1f6c4a22cca98d6acb19e8cfa3357e3c5dd3897fcc48269a93b1104af6
+  languageName: node
+  linkType: hard
+
 "@graphql-tools/schema@npm:^6.0.9":
   version: 6.0.11
   resolution: "@graphql-tools/schema@npm:6.0.11"
@@ -11379,6 +11425,10 @@ is-whitespace@latest:
   version: 0.0.0-use.local
   resolution: "main-website@workspace:."
   dependencies:
+    "@fortawesome/fontawesome-svg-core": ^1.2.30
+    "@fortawesome/free-brands-svg-icons": ^5.14.0
+    "@fortawesome/free-solid-svg-icons": ^5.14.0
+    "@fortawesome/react-fontawesome": ^0.1.11
     "@types/node": ^14.0.27
     "@types/react": ^16.9.43
     "@types/react-dom": ^16.9.8

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-import { Header } from 'components'
+import { Header, Footer } from 'components'
 
 import './pageLayout.css'
 import 'typeface-dm-sans'
@@ -22,11 +22,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
     <div id='faux-root'>
       <Header />
       <Main>{children}</Main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href='https://www.gatsbyjs.org'>Gatsby</a>
-      </footer>
+      <Footer />
     </div>
   )
 }

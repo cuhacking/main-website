@@ -14,17 +14,15 @@ const StyledHeader = styled.header`
 
   background-color: var(--black);
   color: var(--white);
-
-  @media only screen and (min-width: 1200px) {
-  }
 `
 
 const NavBar = styled.nav`
   display: flex;
   flex-direction: row;
-  width: var(--mobile-width);
   justify-content: space-between;
   align-items: center;
+
+  width: var(--mobile-width);
 
   @media only screen and (min-width: 1200px) {
     max-width: var(--desktop-width);
@@ -38,7 +36,6 @@ const StyledLogo = styled(WordLogoDark)`
 const ButtonDiv = styled.div``
 
 const NavButton = styled(Link)`
-  color: var(--white);
   font-size: 1.125rem;
   margin-left: 40px;
 
