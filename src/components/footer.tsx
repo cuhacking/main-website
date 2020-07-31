@@ -47,10 +47,15 @@ const BackToTopButton = styled.button`
   border: none;
 
   font-family: 'Work Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: normal;
 
-  @media only screen and (min-width: 1200px) {
+  margin: 0 0 20px;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 1.125rem;
+    margin: 0;
+
     transition: 0.1s ease-in;
 
     &:hover {
@@ -62,13 +67,34 @@ const BackToTopButton = styled.button`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  width: var(--mobile-width);
+
+  @media only screen and (min-width: 700px) {
+    flex-direction: row;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: var(--desktop-width);
+  }
 `
 
 const Description = styled.div`
-  width: 45%;
-  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
+
+  @media only screen and (min-width: 700px) {
+    text-align: left;
+    align-items: flex-start;
+    width: 45%;
+    margin-bottom: 0;
+    margin-right: 5%;
+  }
 `
 
 const StyledLogo = styled(WordLogoDark)`
@@ -79,12 +105,14 @@ const StyledLogo = styled(WordLogoDark)`
 const ContactPrompt = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25%;
-  margin: 25px 5% 0 0;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
 
   h3 {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: normal;
 
     margin: 0;
@@ -92,6 +120,14 @@ const ContactPrompt = styled.div`
 
   a {
     text-decoration: underline;
+  }
+
+  @media only screen and (min-width: 700px) {
+    text-align: left;
+    align-items: flex-start;
+    width: 35%;
+    margin-bottom: 0;
+    margin: 25px 5% 0 0;
   }
 `
 
@@ -125,10 +161,13 @@ const NavMenu = styled.nav`
 `
 
 const NavButton = styled(Link)`
-  font-size: 1.125rem;
+  font-size: 1.5rem;
+  text-align: center;
   margin-bottom: 10px;
 
   @media only screen and (min-width: 700px) {
+    font-size: 1.125rem;
+    text-align: left;
     transition: 0.1s ease-in;
 
     &:hover {
@@ -138,7 +177,11 @@ const NavButton = styled(Link)`
 `
 
 const SendOff = styled.p`
-  align-self: flex-start;
+  margin: 20px 0;
+
+  @media only screen and (min-width: 700px) {
+    align-self: flex-start;
+  }
 `
 
 const Footer = () => (

@@ -55,8 +55,6 @@ const ButtonDiv = styled.div`
   @media only screen and (min-width: 700px) {
     display: flex;
     flex-direction: row;
-    /* justify-content: flex-end;
-    align-items: center; */
   }
 `
 

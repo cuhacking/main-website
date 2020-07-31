@@ -22,7 +22,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
     <div id='faux-root'>
       <Header />
       <Main>{children}</Main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
