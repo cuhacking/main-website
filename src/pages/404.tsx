@@ -1,13 +1,68 @@
 import React from 'react'
-
+import styled from 'styled-components'
 import { PageLayout } from 'layouts'
-import { SEO } from 'components'
+import { Button, SEO } from 'components'
+import bkgNoCurveUrl from 'images/bkg-no-curve.svg'
+
+const BkgContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 65px);
+
+  background: center / cover no-repeat url(${bkgNoCurveUrl});
+`
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: var(--white);
+
+  width: var(--mobile-width);
+
+  h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+  }
+
+  @media only screen and (min-width: 700px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: var(--desktop-width);
+
+    h1 {
+      font-size: 6rem;
+    }
+  }
+`
 
 const NotFoundPage = () => (
   <PageLayout>
     <SEO title='404: Not found' />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <BkgContainer>
+      <TextContainer>
+        <h1>Page Not Found</h1>
+        <p>Let's get you back to safety.</p>
+        <Button link='/'>Home</Button>
+      </TextContainer>
+    </BkgContainer>
   </PageLayout>
 )
 
