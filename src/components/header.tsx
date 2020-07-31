@@ -27,7 +27,6 @@ const StyledHeader = styled.header<{ isOpen: boolean }>`
 
   @media only screen and (min-width: 700px) {
     height: 65px;
-    position: relative;
   }
 `
 
