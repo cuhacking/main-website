@@ -11,7 +11,8 @@ const BkgContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 65px);
+  height: calc(100vh - 65px);
+  min-height: 480px;
 
   background: center / cover no-repeat url(${bkgNoCurveUrl});
 `
@@ -26,7 +27,6 @@ const TextContainer = styled.div`
   width: var(--mobile-width);
 
   h1 {
-    font-family: 'DM Sans', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
 

@@ -7,7 +7,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 const genericButton = css`
   border: 2px solid var(--grey);
   background-color: var(--grey);
-  color: var(--white);
+  color: var(--white) !important;
 
   font-family: 'Work Sans', sans-serif;
   font-size: 1.125rem;
@@ -35,7 +35,7 @@ const enabledButton = css`
   @media only screen and (min-width: 700px) {
     &:hover {
       background-color: var(--white);
-      color: var(--purple);
+      color: var(--purple) !important;
       cursor: pointer;
     }
   }

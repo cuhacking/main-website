@@ -111,7 +111,6 @@ const ContactPrompt = styled.div`
   margin-bottom: 25px;
 
   h3 {
-    font-family: 'DM Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: normal;
 
