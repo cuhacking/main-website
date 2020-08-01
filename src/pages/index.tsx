@@ -201,8 +201,8 @@ const IndexPage = () => {
               <br />
               We strive to give you the control over your technical and creative
               development, recreational participation, and networking
-              opportunities with industry leaders, so you can be successful in
-              your own right.
+              opportunities with industry leaders, so you can propel yourself to
+              new heights.
             </p>
           </DialogueDiv>
         </QuestionDiv>
@@ -233,7 +233,7 @@ const IndexPage = () => {
               <br />
               <br />
               Don’t fret! We’re still creating opportunities for you grow and
-              develop yourself through many other activities.
+              develop yourself through many other online events and activities.
             </p>
             <Button link='/about'>Read More</Button>
           </DialogueDiv>
