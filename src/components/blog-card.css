@@ -5,9 +5,8 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: var(--white);
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 }
 
@@ -21,4 +20,16 @@
     width: 100%;
     border-top-left-radius: calc(0.25rem - 1px);
     border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card a {
+    color: var(--black);
+}
+
+.tag {
+    color: var(--purple2);
+}
+
+.date-reading-time {
+    color: var(--midgrey);
 }
