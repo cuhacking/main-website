@@ -7,9 +7,9 @@ function Nav() {
     <nav className="navbar-container">
       <Link to="/"> <h3> cuHacking Logo </h3> </Link>
       <ul className="navbar-links">
-        <Link to="/"> <li> Home </li> </Link>
-        <Link to="/Events"> <li> Events</li> </Link>
-        <Link to="/Blog"> <li> Blog</li> </Link>
+        <Link to="/" className="navbar-link"> <li> Home </li> </Link>
+        <Link to="/events" className="navbar-link"> <li> Events</li> </Link>
+        <Link to="/blog" className="navbar-link"> <li> Blog</li> </Link>
       </ul>
     </nav>
   );
