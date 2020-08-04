@@ -1,3 +1,7 @@
+a:hover {
+    text-decoration: none !important;
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
