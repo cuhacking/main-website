@@ -1,7 +1,7 @@
 import React from 'react';
 import './blog.css';
 import BlogCard from '../components/blog-card';
-// import HeaderSmall from '../components/headerSmall'
+import HeaderSmall from '../components/headerSmall'
 
 export default class Blog extends React.Component<object> {
 
@@ -43,7 +43,7 @@ export default class Blog extends React.Component<object> {
     } else {
       return (
         <div>
-          {/* <HeaderSmall title="cuHacking" subtitle="Blog" /> */}
+          <HeaderSmall title="cuHacking" subtitle="Blog" />
           <main className="container">
             <div className="row">
               {posts.map((post: any) => (
