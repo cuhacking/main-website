@@ -92,14 +92,15 @@ export default class SinglePost extends React.Component<object> {
 
                             </div>
                         </header>
-                        <figure className="post-full-image">
-                            <img srcSet={posts[0].feature_image + " 300w, " +
-                                posts[0].feature_image + " 600w, " +
-                                posts[0].feature_image + " 1000w, " +
-                                posts[0].feature_image + " 2000w, "} sizes="(max-width: 800px) 400px,
+
+                        {posts[0].feature_image == null ? "" : <figure className="post-full-image"><img srcSet={posts[0].feature_image + " 300w, " +
+                            posts[0].feature_image + " 600w, " +
+                            posts[0].feature_image + " 1000w, " +
+                            posts[0].feature_image + " 2000w, "} sizes="(max-width: 800px) 400px,
                         (max-width: 1170px) 1170px,
-                            2000px" src={posts[0].feature_image} alt={posts[0].title} />
-                        </figure>
+                            2000px" src={posts[0].feature_image} alt={posts[0].title} /></figure>}
+
+
                         <section className="post-full-content">
                             <div className="post-content" dangerouslySetInnerHTML={{ __html: posts[0].html }} />
                         </section>
