@@ -2,6 +2,7 @@ import React from 'react';
 import './blog.css';
 import BlogCard from '../components/blog-card';
 import HeaderSmall from '../components/headerSmall'
+import * as config from "../config.json";
 
 export default class Blog extends React.Component<object> {
 
@@ -15,7 +16,8 @@ export default class Blog extends React.Component<object> {
   }
 
   componentDidMount() {
-    fetch("https://admin.cuhacking.com/ghost/api/v3/content/posts/?key=4ff22bcd0f6effc7d2df8ee82b&include=tags,authors")
+    const URL = config.blog.url + "?key=" + config.blog.key + "&include=tags,authors";
+    fetch(URL)
       .then(res => res.json())
       .then(
         (result) => {

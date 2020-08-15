@@ -1,5 +1,6 @@
 import React from 'react';
 import './single-post.css';
+import * as config from "../config.json";
 
 export default class SinglePost extends React.Component<object> {
 
@@ -15,7 +16,8 @@ export default class SinglePost extends React.Component<object> {
 
     componentDidMount() {
         const { slug }: any = this.state;
-        fetch("https://admin.cuhacking.com/ghost/api/v3/content/posts/slug/" + slug + "?key=4ff22bcd0f6effc7d2df8ee82b&include=tags,authors")
+        const URL = config.blog.url + "slug/" + slug + "?key=" + config.blog.key + "&include=tags,authors";
+        fetch(URL)
             .then(res => res.json())
             .then(
                 (result) => {
