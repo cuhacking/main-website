@@ -81,7 +81,7 @@ export default class SinglePost extends React.Component<object> {
 
                                     <ul className="author-list">
                                         {posts[0].authors.map((author: any) => (
-                                            <li className="author-list-item">
+                                            <li className="author-list-item" key="author.name">
                                                 <div className="author-card">
                                                     <img className="author-profile-image" src={author.profile_image} alt="Ghost" />
                                                     <div className="author-info">
@@ -91,14 +91,16 @@ export default class SinglePost extends React.Component<object> {
                                                     </div>
                                                 </div>
                                                 <div className="author-avatar">
-                                                    <img className="author-profile-image" src="https://static.ghost.org/v3.0.0/images/ghost.png" alt="Ghost" />
+                                                    <img className="author-profile-image" src={author.profile_image} alt="Ghost" />
                                                 </div>
                                             </li>
                                         ))}
                                     </ul>
 
                                     <section className="post-full-byline-meta">
-                                        <h4 className="author-name"><a href="/author/ghost/">{posts[0].primary_author.name}</a></h4>
+                                        {/* <h4 className="author-name"><a href="/author/ghost/">{posts[0].primary_author.name}</a></h4> */}
+                                        <h4 className="author-name">{posts[0].primary_author.name}</h4>
+
                                         <div className="byline-meta-content">
                                             <time className="byline-meta-date">{posts[0].published_at}</time>
                                             <span className="byline-reading-time"><span className="bull">•</span> {posts[0].reading_time} min read</span>
