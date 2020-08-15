@@ -1290,22 +1290,9 @@ Usage (In Ghost editor):
 }
 
 .post-full-content h5 {
-    display: block;
-    margin: 0.5em 0;
-    padding: 0.4em 1em 0.9em;
-    border: 0;
-    color: var(--blue);
-    font-family: 'Work Sans', sans-serif;
-    font-size: 3.2rem;
-    line-height: 1.35em;
-    text-align: center;
-}
-
-@media (min-width: 1180px) {
-    .post-full-content h5 {
-        max-width: 1060px;
-        width: 100vw;
-    }
+    margin: 0.5em 0 0.2em;
+    font-size: 2.25rem;
+    font-weight: 600;
 }
 
 @media (max-width: 800px) {
@@ -2737,4 +2724,19 @@ Usage (In Ghost editor):
 .tag-single-post {
     color: var(--blue);
     margin-bottom: 5px;
+}
+
+.byline-meta-content {
+    color: var(--midgrey);
+}
+
+hr {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 2em 0 2em 0;
+    padding: 0;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
 }
