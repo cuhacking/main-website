@@ -12,7 +12,26 @@ type BlogCardProps = {
     tags: Array<any>
 }
 
-const BlogCard = ({ title, reading_time, published_at, excerpt, feature_image, slug, tags }: BlogCardProps) => {
+const BlogCard = ({ title, reading_time, published_at, excerpt, feature_image, slug, tags, authors, primary_author_name }: BlogCardProps) => {
+    console.log(feature_image);
+    const months = [
+        'JAN',
+        'FEB',
+        'MAR',
+        'APR',
+        'MAY',
+        'JUN',
+        'JULY',
+        'AUG',
+        'SEPT',
+        'OCT',
+        'NOV',
+        'DEC'
+    ]
+
+    const month = (new Date(published_at)).getMonth();
+    const formatted_published_at = (new Date(published_at)).getDate() + " " + months[month] + " " +
+        (new Date(published_at)).getFullYear();
     return (
         <div className="card mb-2">
             <Link to={"/blog/" + slug}>

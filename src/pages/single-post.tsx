@@ -44,6 +44,24 @@ export default class SinglePost extends React.Component<object> {
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
+            const months = [
+                'JAN',
+                'FEB',
+                'MAR',
+                'APR',
+                'MAY',
+                'JUN',
+                'JULY',
+                'AUG',
+                'SEPT',
+                'OCT',
+                'NOV',
+                'DEC'
+            ]
+
+            const month = (new Date(posts[0].published_at)).getMonth();
+            posts[0].published_at = (new Date(posts[0].published_at)).getDate() + " " + months[month] + " " +
+                (new Date(posts[0].published_at)).getFullYear();
             return (<main id="site-main" className="site-main outer">
                 <div className="inner">
                     <article className="post-full post">
