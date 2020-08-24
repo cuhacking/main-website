@@ -1,9 +1,3 @@
-/* DM Sans */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-
-/* Work Sans */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-
 html {
   font-family: 'Work Sans', sans-serif;
   font-size: 100%;

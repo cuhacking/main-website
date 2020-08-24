@@ -101,7 +101,7 @@ const Header = () => {
           >
             Home
           </NavButton>
-          <NavButton
+          {/* <NavButton
             to='/about'
             activeStyle={{
               color: 'var(--purple)'
@@ -125,7 +125,7 @@ const Header = () => {
             }}
           >
             Blog
-          </NavButton>
+          </NavButton> */}
         </ButtonDiv>
       </NavBar>
       <NavMenu>
@@ -137,7 +137,7 @@ const Header = () => {
         >
           Home
         </NavButton>
-        <NavButton
+        {/* <NavButton
           to='/about'
           activeStyle={{
             color: 'var(--purple)'
@@ -160,7 +160,7 @@ const Header = () => {
           }}
         >
           Blog
-        </NavButton>
+        </NavButton> */}
       </NavMenu>
     </StyledHeader>
   )

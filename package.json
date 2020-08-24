@@ -18,6 +18,7 @@
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-ghost": "^4.0.5",
     "gatsby-transformer-sharp": "^2.5.7",
+    "gh-pages": "^3.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -28,6 +29,7 @@
     "typeface-work-sans": "^0.0.72"
   },
   "devDependencies": {
+    "@types/gh-pages": "^3",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
@@ -38,6 +40,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
