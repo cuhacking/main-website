@@ -46,6 +46,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"
       ],
       [
+        "@types/gh-pages",
+        "npm:3.0.0"
+      ],
+      [
         "@types/node",
         "npm:14.6.0"
       ],
@@ -110,6 +114,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"
       ],
       [
+        "gh-pages",
+        "npm:3.1.0"
+      ],
+      [
         "prettier",
         "npm:2.0.5"
       ],
@@ -161,6 +169,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/free-solid-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"],
+            ["@types/gh-pages", "npm:3.0.0"],
             ["@types/node", "npm:14.6.0"],
             ["@types/react", "npm:16.9.46"],
             ["@types/react-dom", "npm:16.9.8"],
@@ -177,6 +186,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-filesystem", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.3.24"],
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
+            ["gh-pages", "npm:3.1.0"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -3293,6 +3303,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-get-port-npm-3.2.0-8071609f4c-49109dfbd9.zip/node_modules/@types/get-port/",
           "packageDependencies": [
             ["@types/get-port", "npm:3.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/gh-pages", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/@types-gh-pages-npm-3.0.0-6721545595-1343b3c687.zip/node_modules/@types/gh-pages/",
+          "packageDependencies": [
+            ["@types/gh-pages", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -8107,6 +8126,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["email-addresses", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/email-addresses-npm-3.1.0-332eec577b-657c0cd22f.zip/node_modules/email-addresses/",
+          "packageDependencies": [
+            ["email-addresses", "npm:3.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["emoji-regex", [
         ["npm:7.0.3", {
           "packageLocation": "./.yarn/cache/emoji-regex-npm-7.0.3-cfe9479bb3-e3a504cf52.zip/node_modules/emoji-regex/",
@@ -9326,6 +9354,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["filename-reserved-regex", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/filename-reserved-regex-npm-1.0.0-5f811f7513-3e68d59ab8.zip/node_modules/filename-reserved-regex/",
+          "packageDependencies": [
+            ["filename-reserved-regex", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/filename-reserved-regex-npm-2.0.0-5d8c6e337c-a91ecd88ed.zip/node_modules/filename-reserved-regex/",
           "packageDependencies": [
@@ -9335,6 +9370,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["filenamify", [
+        ["npm:1.2.1", {
+          "packageLocation": "./.yarn/cache/filenamify-npm-1.2.1-3a2a0f712b-e728fb0020.zip/node_modules/filenamify/",
+          "packageDependencies": [
+            ["filenamify", "npm:1.2.1"],
+            ["filename-reserved-regex", "npm:1.0.0"],
+            ["strip-outer", "npm:1.0.1"],
+            ["trim-repeated", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:2.1.0", {
           "packageLocation": "./.yarn/cache/filenamify-npm-2.1.0-c3f25b129f-3c9daa99d3.zip/node_modules/filenamify/",
           "packageDependencies": [
@@ -9342,6 +9387,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["filename-reserved-regex", "npm:2.0.0"],
             ["strip-outer", "npm:1.0.1"],
             ["trim-repeated", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["filenamify-url", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/filenamify-url-npm-1.0.0-91e5277c89-aca589e180.zip/node_modules/filenamify-url/",
+          "packageDependencies": [
+            ["filenamify-url", "npm:1.0.0"],
+            ["filenamify", "npm:1.2.1"],
+            ["humanize-url", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -10608,6 +10664,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["gh-pages", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/gh-pages-npm-3.1.0-ac227ed26d-cd329b21f2.zip/node_modules/gh-pages/",
+          "packageDependencies": [
+            ["gh-pages", "npm:3.1.0"],
+            ["async", "npm:2.6.3"],
+            ["commander", "npm:2.20.3"],
+            ["email-addresses", "npm:3.1.0"],
+            ["filenamify-url", "npm:1.0.0"],
+            ["find-cache-dir", "npm:3.3.1"],
+            ["fs-extra", "npm:8.1.0"],
+            ["globby", "npm:6.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["gifwrap", [
         ["npm:0.9.2", {
           "packageLocation": "./.yarn/cache/gifwrap-npm-0.9.2-6e095cc9ae-44c8c39c1a.zip/node_modules/gifwrap/",
@@ -11633,6 +11705,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/human-signals-npm-1.1.1-616b2586c2-cac115f635.zip/node_modules/human-signals/",
           "packageDependencies": [
             ["human-signals", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["humanize-url", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/humanize-url-npm-1.0.1-ee29b77626-12c3f677a5.zip/node_modules/humanize-url/",
+          "packageDependencies": [
+            ["humanize-url", "npm:1.0.1"],
+            ["normalize-url", "npm:1.9.1"],
+            ["strip-url-auth", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -13820,6 +13903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/free-solid-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"],
+            ["@types/gh-pages", "npm:3.0.0"],
             ["@types/node", "npm:14.6.0"],
             ["@types/react", "npm:16.9.46"],
             ["@types/react-dom", "npm:16.9.8"],
@@ -13836,6 +13920,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-filesystem", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.3.24"],
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
+            ["gh-pages", "npm:3.1.0"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -19582,6 +19667,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["strip-outer", "npm:1.0.1"],
             ["escape-string-regexp", "npm:1.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["strip-url-auth", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/strip-url-auth-npm-1.0.1-2bb8524f3b-3b0b45e942.zip/node_modules/strip-url-auth/",
+          "packageDependencies": [
+            ["strip-url-auth", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]

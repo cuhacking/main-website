@@ -2,6 +2,7 @@ const path = require('path')
 const ghostConfig = require('./ghostConfig.json')
 
 module.exports = {
+  pathPrefix: '/main-website',
   siteMetadata: {
     title: `cuHacking`,
     description: `We strive to give students the means to enhance their technical skills, make new friends, and create genuine connections with industry professionals so they can propel themselves to new heights.`,
