@@ -1,79 +1,81 @@
 .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 576px) {
-    .container {
-        max-width: 540px;
-    }
-    .header-small {
-        background-size: auto;
-    }
+  .container {
+    max-width: 540px;
+  }
+  .header-small {
+    background-size: auto;
+  }
 }
 
 @media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
-    .header-small {
-        background-size: auto;
-    }
+  .container {
+    max-width: 720px;
+  }
+  .header-small {
+    background-size: auto;
+  }
 }
 
 @media (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-    .header-small {
-        background-size: auto;
-    }
+  .container {
+    max-width: 960px;
+  }
+  .header-small {
+    background-size: auto;
+  }
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
-    .header-small {
-        background-size: 100% 90%;
-    }
+  .container {
+    max-width: 960px;
+  }
+  .header-small {
+    background-size: 100% 90%;
+  }
 }
 
 .jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
 }
 
 .jumbotron-fluid {
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
 }
 
 .header-small {
-    background-image: url('../assets/bkg-small.svg');
-    background-position: center 0;
-    background-repeat: no-repeat;
-    height: 450px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: calc(50vh - 65px);
+  min-height: 480px;
+
+  background: bottom / cover no-repeat url('../images/bkg-small.svg');
 }
 
 .header-small-title {
-    padding-bottom: 100px;
-    margin: 0;
-    font-size: 80px;
-    line-height: 117px;
-    color: #FFFFFF;
+  padding-bottom: 100px;
+  margin: 0;
+  font-size: 80px;
+  line-height: 117px;
+  color: #ffffff;
 }
 
 .header-small-subtitle {
-    font-weight: normal;
+  font-weight: normal;
 }
