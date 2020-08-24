@@ -56,14 +56,16 @@
 }
 
 .header-small {
-  background-image: url('../images/bkg-small.svg');
-  background-position: center 0;
-  background-repeat: no-repeat;
-  height: 450px;
-  background-color: white;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+
+  width: 100%;
+  height: calc(50vh - 65px);
+  min-height: 480px;
+
+  background: bottom / cover no-repeat url('../images/bkg-small.svg');
 }
 
 .header-small-title {

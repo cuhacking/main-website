@@ -1,4 +1,5 @@
 const path = require('path')
+const ghostConfig = require('./ghostConfig.json')
 
 module.exports = {
   siteMetadata: {
@@ -38,6 +39,10 @@ module.exports = {
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-ghost`,
+      options: ghostConfig
+    }
   ]
 }

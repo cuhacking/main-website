@@ -2480,6 +2480,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tryghost/content-api@npm:1.4.1":
+  version: 1.4.1
+  resolution: "@tryghost/content-api@npm:1.4.1"
+  dependencies:
+    axios: 0.19.2
+  checksum: c15746f88f9af6dfcc3081e2e5ee7f94859848f232aa60926348f2eea9808e3f4ca3f1ade7c2578731a79f4e38c688756be3348c785b10e8d6ac1384b82602b9
+  languageName: node
+  linkType: hard
+
 "@turist/fetch@npm:^7.1.6":
   version: 7.1.7
   resolution: "@turist/fetch@npm:7.1.7"
@@ -3763,7 +3772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.19.0, axios@npm:^0.19.2":
+"axios@npm:0.19.2, axios@npm:^0.19.0, axios@npm:^0.19.2":
   version: 0.19.2
   resolution: "axios@npm:0.19.2"
   dependencies:
@@ -4250,7 +4259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:^3.5.5, bluebird@npm:^3.7.2":
+"bluebird@npm:3.7.2, bluebird@npm:^3.5.5, bluebird@npm:^3.7.2":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 4f2288662f3d4eadbb82d4daa4a7d7976a28fa3c7eb4102c9b4033b03e5be4574ba123ac52a7c103cde4cb7b2d2afc1dbe41817ca15a29ff21ecd258d0286047
@@ -4927,7 +4936,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cheerio@npm:^1.0.0-rc.3":
+"cheerio@npm:1.0.0-rc.3, cheerio@npm:^1.0.0-rc.3":
   version: 1.0.0-rc.3
   resolution: "cheerio@npm:1.0.0-rc.3"
   dependencies:
@@ -8436,6 +8445,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"gatsby-node-helpers@npm:0.3.0":
+  version: 0.3.0
+  resolution: "gatsby-node-helpers@npm:0.3.0"
+  dependencies:
+    json-stringify-safe: ^5.0.1
+    lodash: ^4.17.4
+    p-is-promise: ^1.1.0
+  checksum: 55cb60f90990a02aa5d4470b844fb19c8a6884668a82293edca518f2af5028d3e34506fc38979381d5626c181656d013a5002ad21b44bc97cb7bac710b971d64
+  languageName: node
+  linkType: hard
+
 "gatsby-page-utils@npm:^0.2.20":
   version: 0.2.20
   resolution: "gatsby-page-utils@npm:0.2.20"
@@ -8705,6 +8725,19 @@ fsevents@~2.1.2:
   peerDependencies:
     gatsby: ^2.2.0
   checksum: 5506b41bb6114dea25c0abcfa7e06f6a7f7ca2e40ef439567511cfb03f28df5cca32f3d357045bde74c895118860c24ff727806dfdf82ebf5aefaac910a144de
+  languageName: node
+  linkType: hard
+
+"gatsby-source-ghost@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "gatsby-source-ghost@npm:4.0.5"
+  dependencies:
+    "@tryghost/content-api": 1.4.1
+    bluebird: 3.7.2
+    cheerio: 1.0.0-rc.3
+    gatsby-node-helpers: 0.3.0
+    qs: 6.9.4
+  checksum: c6c9c465a5447ae678d89604f9ed6a2b304896b4e0b81b3c137dd148e735d25eabc81b7c1f10bc0241b4c5f98cd5f15d10a5adc134975f1ddb0d02f572675ca7
   languageName: node
   linkType: hard
 
@@ -11897,6 +11930,7 @@ fsevents@~2.1.2:
     gatsby-plugin-sharp: ^2.6.14
     gatsby-plugin-styled-components: ^3.3.10
     gatsby-source-filesystem: ^2.3.14
+    gatsby-source-ghost: ^4.0.5
     gatsby-transformer-sharp: ^2.5.7
     prettier: 2.0.5
     prop-types: ^15.7.2
@@ -14714,6 +14748,13 @@ fsevents@~2.1.2:
   version: 6.7.0
   resolution: "qs@npm:6.7.0"
   checksum: 8590470436ff0a75ae35e6b45fd7260e2beb537ff8ec1104f9703a349b09ce1aa27e8e1c06b9ad25ac62fc098e12cc65df93042a233128a0276ccd6de4c7819a
+  languageName: node
+  linkType: hard
+
+"qs@npm:6.9.4":
+  version: 6.9.4
+  resolution: "qs@npm:6.9.4"
+  checksum: beba62d1e1c66e9888cc08a488eb95771c252a92289a96bff4b767a49e4e7afe9487d7ee3269b856292d8281b855ac5eac927c2e77f845e407ee4fe54743fea7
   languageName: node
   linkType: hard
 

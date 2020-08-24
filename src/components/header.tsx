@@ -119,6 +119,7 @@ const Header = () => {
           </NavButton>
           <NavButton
             to='/blog'
+            partiallyActive={true}
             activeStyle={{
               color: 'var(--purple)'
             }}
