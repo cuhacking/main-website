@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'gatsby'
+import { PageLayout } from 'layouts'
+import { SEO } from 'components'
+
 import './blog.css'
-import BlogCard from '../components/blog-card'
-import HeaderSmall from '../components/headerSmall'
+import BlogCard from 'components/blog-card'
+import HeaderSmall from 'components/headerSmall'
 import * as config from '../config.json'
-import { Link } from 'react-router-dom'
-import FeatureImage from '../assets/default-feature-image.jpg'
+import FeatureImage from 'images/default-feature-image.jpg'
 
 export default class Blog extends React.Component<object> {
   constructor(props: any) {
@@ -17,7 +20,8 @@ export default class Blog extends React.Component<object> {
   }
 
   componentDidMount() {
-    const URL = config.blog.url + '?key=' + config.blog.key + '&include=tags,authors'
+    const URL =
+      config.blog.url + '?key=' + config.blog.key + '&include=tags,authors'
     fetch(URL)
       .then((res) => res.json())
       .then(
@@ -37,14 +41,27 @@ export default class Blog extends React.Component<object> {
       )
   }
 
-  render() {
+  renderBlog() {
     const { error, isLoaded, posts }: any = this.state
     if (error) {
       return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
-      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JULY', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC']
+      const months = [
+        'JAN',
+        'FEB',
+        'MAR',
+        'APR',
+        'MAY',
+        'JUN',
+        'JULY',
+        'AUG',
+        'SEPT',
+        'OCT',
+        'NOV',
+        'DEC'
+      ]
 
       const month = new Date(posts[0].published_at).getMonth()
       const formatted_published_at =
@@ -55,14 +72,18 @@ export default class Blog extends React.Component<object> {
         new Date(posts[0].published_at).getFullYear()
       return (
         <div>
-          <HeaderSmall title='cuHacking' subtitle='Blog' />
-          <main className='container'>
+          {/* <HeaderSmall title='cuHacking' subtitle='Blog' /> */}
+          <div className='container'>
             <div className='card mb-2'>
-              <Link to={'/blog/' + posts[0].slug}>
+              <Link to={posts[0].slug}>
                 <div className='row'>
                   <div className='col-md-6'>
                     <img
-                      src={posts[0].feature_image == null ? FeatureImage : posts[0].feature_image}
+                      src={
+                        posts[0].feature_image == null
+                          ? FeatureImage
+                          : posts[0].feature_image
+                      }
                       alt='img'
                       className='card-img-top'
                     />
@@ -80,9 +101,16 @@ export default class Blog extends React.Component<object> {
                         <section className='post-full-byline-content'>
                           <ul className='author-list'>
                             {posts[0].authors.map((author: any) => (
-                              <li className='author-list-item' key='author.name'>
+                              <li
+                                className='author-list-item'
+                                key='author.name'
+                              >
                                 <div className='author-card'>
-                                  <img className='author-profile-image' src={author.profile_image} alt='Ghost' />
+                                  <img
+                                    className='author-profile-image'
+                                    src={author.profile_image}
+                                    alt='Ghost'
+                                  />
                                   <div className='author-info'>
                                     <div className='bio'>
                                       <h2>{author.name}</h2>
@@ -90,7 +118,11 @@ export default class Blog extends React.Component<object> {
                                   </div>
                                 </div>
                                 <div className='author-avatar'>
-                                  <img className='author-profile-image' src={author.profile_image} alt='Ghost' />
+                                  <img
+                                    className='author-profile-image'
+                                    src={author.profile_image}
+                                    alt='Ghost'
+                                  />
                                 </div>
                               </li>
                             ))}
@@ -98,12 +130,17 @@ export default class Blog extends React.Component<object> {
 
                           <section className='post-full-byline-meta'>
                             {/* <h4 className="author-name"><a href="/author/ghost/">{primary_author_name}</a></h4> */}
-                            <h4 className='author-name'>{posts[0].primary_author.name}</h4>
+                            <h4 className='author-name'>
+                              {posts[0].primary_author.name}
+                            </h4>
 
                             <div className='byline-meta-content'>
-                              <time className='byline-meta-date'>{formatted_published_at}</time>
+                              <time className='byline-meta-date'>
+                                {formatted_published_at}
+                              </time>
                               <span className='byline-reading-time'>
-                                <span className='bull'>•</span> {posts[0].reading_time} min read
+                                <span className='bull'>•</span>{' '}
+                                {posts[0].reading_time} min read
                               </span>
                             </div>
                           </section>
@@ -132,9 +169,18 @@ export default class Blog extends React.Component<object> {
                 </div>
               ))}
             </div>
-          </main>
+          </div>
         </div>
       )
     }
+  }
+
+  render() {
+    return (
+      <PageLayout>
+        <SEO title='Blog' />
+        {this.renderBlog()}
+      </PageLayout>
+    )
   }
 }
