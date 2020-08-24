@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import {
+  faDiscord,
   faFacebookF,
   faLinkedin,
   faInstagram,
@@ -198,10 +199,9 @@ const Footer = () => (
         <Description>
           <StyledLogo />
           <p>
-            cuHacking 2020 is set to provide an unforgettable experience, where
-            students can enhance technical skills, make new friends, and create
-            genuine connections with industry professionals. We can't wait to
-            see you there!
+            We strive to give students the means to enhance their technical
+            skills, make new friends, and create genuine connections with
+            industry professionals so they can propel themselves to new heights.
           </p>
         </Description>
         <ContactPrompt>
@@ -213,6 +213,13 @@ const Footer = () => (
             <a href='mailto:info@cuhacking.com'>info@cuHacking.com</a>.
           </p>
           <SocialDiv>
+            <StyledIcon
+              target='_blank'
+              rel='noopener noreferrer external'
+              href='https://discord.gg/uzBDZEY'
+            >
+              <FontAwesomeIcon icon={faDiscord} size='1x' />
+            </StyledIcon>
             <StyledIcon
               target='_blank'
               rel='noopener noreferrer external'
@@ -259,7 +266,7 @@ const Footer = () => (
           >
             Home
           </NavButton>
-          <NavButton
+          {/* <NavButton
             to='/about'
             activeStyle={{
               color: 'var(--purple)'
@@ -282,7 +289,7 @@ const Footer = () => (
             }}
           >
             Blog
-          </NavButton>
+          </NavButton> */}
         </NavMenu>
       </Content>
       <SendOff>

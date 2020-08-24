@@ -182,7 +182,10 @@ const IndexPage = () => {
               <br />
               Come be a part of the wave.
             </p>
-            <Button link='/about'>Learn More</Button>
+            {/* <Button link='/about'>Learn More</Button> */}
+            <Button external link='https://discord.gg/uzBDZEY'>
+              Join Our Discord Server
+            </Button>
           </TextContainer>
         </Splash>
       </SplashContainer>
@@ -216,7 +219,7 @@ const IndexPage = () => {
               than just an annual event. Join the community to tag along on our
               journey.
             </p>
-            <Button external link='https://discord.gg/XTjQGks'>
+            <Button external link='https://discord.gg/uzBDZEY'>
               Join Our Discord Server
             </Button>
           </DialogueDiv>
@@ -229,13 +232,13 @@ const IndexPage = () => {
               We will still be holding large scale hackathons in the future.
               However, given the current circumstances we face with the ongoing
               pandemic,{' '}
-              <strong>cuHacking 2021 is postponed indefinitely.</strong>
+              <strong>cuHacking 2021 is postponed for the time being.</strong>
               <br />
               <br />
               Don’t fret! We’re still creating opportunities for you grow and
               develop yourself through many other online events and activities.
             </p>
-            <Button link='/about'>Read More</Button>
+            {/* <Button link='/about'>Read More</Button> */}
           </DialogueDiv>
         </QuestionDiv>
       </QuestionsContainer>
