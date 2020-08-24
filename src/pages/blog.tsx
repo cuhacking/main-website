@@ -64,7 +64,7 @@ export default ({ data }) => {
                       ))
                     ) : (
                       <span className='tag' key='tag.name'>
-                        {' '}
+                        {'  '}
                       </span>
                     )}
                     <h2>{posts[0].title}</h2>
