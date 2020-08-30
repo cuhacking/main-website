@@ -6,6 +6,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 const genericButton = css`
   border: 2px solid var(--grey);
+  border-radius: 6px;
   background-color: var(--grey);
   color: var(--white) !important;
 

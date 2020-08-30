@@ -32,11 +32,11 @@ const StyledHeader = styled.header<{
   background-color: ${({ isOpen, fixed }) =>
     fixed || isOpen ? 'var(--black)' : 'transparent'};
 
-  transition: 0.2s ease-out;
+  transition: 0.2s cubic-bezier(0.17, 0.84, 0.44, 1);
 
   @media only screen and (min-width: 700px) {
     height: 65px;
-    transition: 0.3s ease-out;
+    transition: 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
     background-color: ${({ fixed }) =>
       fixed ? 'var(--black)' : 'transparent'};
   }
