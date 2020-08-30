@@ -7,6 +7,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "babel-plugin-styled-components": "^1.11.0",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.9",

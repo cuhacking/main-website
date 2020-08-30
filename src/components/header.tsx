@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { useMatch } from '@reach/router'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import WordLogoDark from './wordLogoDark'
 import MenuButton from './menuButton'
 
-const StyledHeader = styled.header<{ isOpen: boolean }>`
-  position: fixed;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  top: 0;
+const StyledHeader = styled.header<{
+  isOpen: boolean
+  isDark: boolean
+  fixed: boolean
+}>`
+  position: ${({ fixed }) => (fixed ? 'fixed' : 'absolute')};
+  box-shadow: ${({ isDark }) =>
+    isDark ? '0px 0px 5px rgba(0, 0, 0, 0.1)' : 'unset'};
+  top: ${({ isOpen, isDark, fixed }) =>
+    !fixed || isDark || isOpen ? 0 : '-65px'};
   left: 0;
   z-index: 1;
   overflow: hidden;
@@ -16,23 +24,28 @@ const StyledHeader = styled.header<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: ${(props) => (props.isOpen ? '20rem' : '65px')};
+  /* change 10rem to 20rem when adding the nav options back*/
+  height: ${(props) => (props.isOpen ? '10rem' : '65px')};
   justify-content: flex-start;
   align-items: center;
 
-  background-color: var(--black);
-  color: var(--white);
+  background-color: ${({ isOpen, fixed }) =>
+    fixed || isOpen ? 'var(--black)' : 'transparent'};
 
-  transition: height 0.2s ease-out;
+  transition: 0.2s cubic-bezier(0.17, 0.84, 0.44, 1);
 
   @media only screen and (min-width: 700px) {
     height: 65px;
+    transition: 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+    background-color: ${({ fixed }) =>
+      fixed ? 'var(--black)' : 'transparent'};
   }
 `
 
 const NavBar = styled.nav`
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
   justify-content: space-between;
   align-items: center;
 
@@ -63,6 +76,10 @@ const NavMenu = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   width: var(--mobile-width);
+
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
 `
 
 const NavButton = styled(Link)`
@@ -82,11 +99,21 @@ const NavButton = styled(Link)`
   }
 `
 
-const Header = () => {
+const Header = (props: { fixed: boolean }) => {
   const [isOpen, setOpen] = useState(false)
+  const [isDark, setDark] = useState(false)
+  const isHome = useMatch('/')
+
+  useScrollPosition(
+    ({ currPos }) => {
+      const shouldBeDark = currPos.y < (isHome ? -800 : -350)
+      if (shouldBeDark !== isDark) setDark(shouldBeDark)
+    },
+    [isDark]
+  )
 
   return (
-    <StyledHeader isOpen={isOpen}>
+    <StyledHeader isOpen={isOpen} isDark={isDark} fixed={props.fixed}>
       <NavBar>
         <Link to='/'>
           <StyledLogo />

@@ -46,6 +46,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"
       ],
       [
+        "@n8tb1t/use-scroll-position",
+        "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:1.0.43"
+      ],
+      [
         "@types/gh-pages",
         "npm:3.0.0"
       ],
@@ -169,6 +173,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/free-solid-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"],
+            ["@n8tb1t/use-scroll-position", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:1.0.43"],
             ["@types/gh-pages", "npm:3.0.0"],
             ["@types/node", "npm:14.6.0"],
             ["@types/react", "npm:16.9.46"],
@@ -2808,6 +2813,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mrmlnc/readdir-enhanced", "npm:2.2.1"],
             ["call-me-maybe", "npm:1.0.1"],
             ["glob-to-regexp", "npm:0.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@n8tb1t/use-scroll-position", [
+        ["virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:1.0.43", {
+          "packageLocation": "./.yarn/$$virtual/@n8tb1t-use-scroll-position-virtual-c4ef358f8a/0/cache/@n8tb1t-use-scroll-position-npm-1.0.43-d638be2da4-66e80a4eb4.zip/node_modules/@n8tb1t/use-scroll-position/",
+          "packageDependencies": [
+            ["@n8tb1t/use-scroll-position", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:1.0.43"],
+            ["react", "npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "react"
           ],
           "linkType": "HARD",
         }]
@@ -13903,6 +13921,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/free-solid-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:0.1.11"],
+            ["@n8tb1t/use-scroll-position", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:1.0.43"],
             ["@types/gh-pages", "npm:3.0.0"],
             ["@types/node", "npm:14.6.0"],
             ["@types/react", "npm:16.9.46"],
