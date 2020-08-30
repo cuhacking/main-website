@@ -52,6 +52,28 @@ h6 {
   font-family: 'DM Sans', sans-serif;
 }
 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+strong::selection,
+b::selection {
+  background: var(--dark-purple);
+  color: var(--blue);
+}
+
+p::selection {
+  background: var(--purple2);
+  color: var(--white);
+}
+
+a::selection {
+  background: var(--black);
+  color: var(--blue);
+}
+
 #faux-root {
   display: flex;
   flex-direction: column;
