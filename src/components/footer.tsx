@@ -216,7 +216,7 @@ const Footer = () => (
             <StyledIcon
               target='_blank'
               rel='noopener noreferrer external'
-              href='https://discord.gg/uzBDZEY'
+              href='https://discord.gg/TGvYPnD'
             >
               <FontAwesomeIcon icon={faDiscord} size='1x' />
             </StyledIcon>
