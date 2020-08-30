@@ -79,9 +79,8 @@ a::selection {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 65px;
 
-  min-height: calc(100vh - 65px);
+  min-height: 100vh;
   position: relative;
 }
 
