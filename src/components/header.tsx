@@ -45,6 +45,7 @@ const StyledHeader = styled.header<{
 const NavBar = styled.nav`
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
   justify-content: space-between;
   align-items: center;
 
@@ -75,6 +76,10 @@ const NavMenu = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   width: var(--mobile-width);
+
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
 `
 
 const NavButton = styled(Link)`
@@ -107,7 +112,6 @@ const Header = (props: { fixed: boolean }) => {
     [isDark]
   )
 
-  console.log(isDark)
   return (
     <StyledHeader isOpen={isOpen} isDark={isDark} fixed={props.fixed}>
       <NavBar>
