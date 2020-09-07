@@ -183,7 +183,7 @@ const EventTime = styled.h3`
 `
 
 const EventDescription = styled.p`
-  font-size: 1.15em;
+  /* font-size: 1.15em; */
 `
 
 const EventGraphic = styled.img`
