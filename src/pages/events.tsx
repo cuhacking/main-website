@@ -97,7 +97,8 @@ const events: Event[] = [
   {
     title: 'Learn to Build on the Cloud using Amazon Web Services (Workshop)',
     time: moment.parseZone('2020-09-13T15:00-04:00'),
-    description: 'Hosted by David Liao.',
+    description:
+      'Cloud computing has drastically changed how businesses provide and consume technology. Come out to this workshop to learn all about cloud computing, and then publicly deploy your own website on the internet using AWS! No prerequisites required. Hosted by David Liao.',
     category: 'technical'
   }
 ]
