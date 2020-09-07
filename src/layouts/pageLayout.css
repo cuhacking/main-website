@@ -19,12 +19,15 @@ body {
   --text: var(--black);
   --desktop-width: 1200px;
   --mobile-width: 90vw;
+  --border-radius: 6px;
 
   --purple2: #7c39bf;
   --darkgrey: #15171a;
   --midgrey: #738a94;
   --lightgrey: #c5d2d9;
   --whitegrey: #e5eff5;
+
+  --monsterrat: 'Montserrat Alternates', sans-serif;
 
   background-color: var(--bkg);
   color: var(--text);
@@ -85,6 +88,14 @@ a::selection {
 }
 
 @media only screen and (min-width: 700px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
   #faux-root {
     min-height: 100vh;
   }

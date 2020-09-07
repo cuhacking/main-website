@@ -20,6 +20,7 @@ const StyledHeader = styled.header<{
   left: 0;
   z-index: 1;
   overflow: hidden;
+  color: ${({ isDark }) => isDark ? 'var(--white)' : 'var(--black)'};
 
   display: flex;
   flex-direction: column;
@@ -91,8 +92,6 @@ const NavButton = styled(Link)`
     font-size: 1.125rem;
     margin: 0 0 0 40px;
 
-    transition: color 0.1s ease-in;
-
     &:hover {
       color: var(--light-purple) !important;
     }
@@ -128,14 +127,6 @@ const Header = (props: { fixed: boolean }) => {
           >
             Home
           </NavButton>
-          {/* <NavButton
-            to='/about'
-            activeStyle={{
-              color: 'var(--purple)'
-            }}
-          >
-            About
-          </NavButton>
           <NavButton
             to='/events'
             activeStyle={{
@@ -143,6 +134,14 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             Events
+          </NavButton>
+          {/* <NavButton
+            to='/about'
+            activeStyle={{
+              color: 'var(--purple)'
+            }}
+          >
+            About
           </NavButton>
           <NavButton
             to='/blog'

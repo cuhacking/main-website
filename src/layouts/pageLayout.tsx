@@ -7,6 +7,7 @@ import { Header, Footer } from 'components'
 import './pageLayout.css'
 import 'typeface-dm-sans'
 import 'typeface-work-sans'
+import 'typeface-montserrat-alternates'
 
 const Main = styled.main`
   display: flex;
