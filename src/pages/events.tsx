@@ -32,32 +32,72 @@ interface Event {
 
 const events: Event[] = [
   {
-    title: 'Social Event',
-    time: moment.parseZone('2020-09-01T19:00-04:00'),
+    title: 'Online Town Social Hangout',
+    time: moment.parseZone('2020-09-08T19:00-04:00'),
     description:
-      'Online Town. Allows participants to chat and meet one another.',
-    category: 'discussion',
-    link: { url: 'https://www.google.com/', label: 'Test Link' }
+      'Online Town. Allows participants to chat and meet one another in a virtual physical space.',
+    category: 'discussion'
   },
   {
     title: 'Academic Info Panel',
     time: moment.parseZone('2020-09-09T18:00-04:00'),
     description:
-      '3rd+ year students from CS, SE, and CSE with a Q&A session where participants will have an opportunity to ask their questions.',
+      'A Q&A session where participants will have the opportunity to ask their university-related questions to 3rd+ year students from Computer Science, Software Engineering, and Computer Systems Engineering.',
     category: 'pd'
   },
   {
-    title: 'Academic Info Panel',
-    time: moment.parseZone('2020-09-09T18:00-04:00'),
+    title: 'Introduction to Git and GitHub (Workshop)',
+    time: moment.parseZone('2020-09-09T20:00-04:00'),
     description:
-      '3rd+ year students from CS, SE, and CSE with a Q&A session where participants will have an opportunity to ask their questions.',
-    category: 'skills'
+      'Git is an instrumental tool for collaborating on code in the industry. In this workshop, participants will learn how to create and fork repositories, write proper commits, create Pull Requests and Issues, and set up Git on their computer. Hosted by Wal Wal.',
+    category: 'technical'
   },
   {
-    title: 'Academic Info Panel',
-    time: moment.parseZone('2020-09-09T18:00-04:00'),
+    title: 'Internship Info Panel',
+    time: moment.parseZone('2020-09-10T18:00-04:00'),
     description:
-      '3rd+ year students from CS, SE, and CSE with a Q&A session where participants will have an opportunity to ask their questions.',
+      'A Q&A session where participants will have the opportunity to ask their internship-related questions to seasoned co-op students.',
+    category: 'pd'
+  },
+  {
+    title: 'Discord Social Night and Networking',
+    time: moment.parseZone('2020-09-10T19:00-04:00'),
+    description:
+      'A virtual social on Discord! Join us in our voice chats to talk and network with other hackers in the community.',
+    category: 'discussion'
+  },
+  {
+    title: 'Movie Night on Netflix Party',
+    time: moment.parseZone('2020-09-11T20:00-04:00'),
+    description: 'Join us for a movie! The movie will be announced on Discord.',
+    category: 'discussion',
+    link: {
+      url: 'https://www.netflixparty.com/',
+      label: 'Netflix Party Extension'
+    }
+  },
+  {
+    title: 'Kotlin: like Java but so much better (Workshop)',
+    time: moment.parseZone('2020-09-12T12:00-04:00'),
+    description:
+      'What makes Kotlin the 4th most loved language by developers? Find out in this workshop that will explore the features that make Kotlin a concise, powerful, and smart language. Please install IntelliJ (linked below) before the attending the workshop. Hosted by Derek Ellis.',
+    category: 'technical',
+    link: {
+      url: 'https://www.jetbrains.com/idea/',
+      label: 'Download IntelliJ IDEA'
+    }
+  },
+  {
+    title: 'Discord Community Game Night',
+    time: moment.parseZone('2020-09-12T20:00-04:00'),
+    description:
+      'Join us for a some video games such as League of Legends, Skribbl.io, and more! The games that are played will be decided by the community on Discord.',
+    category: 'discussion'
+  },
+  {
+    title: 'Learn to Build on the Cloud using Amazon Web Services (Workshop)',
+    time: moment.parseZone('2020-09-13T15:00-04:00'),
+    description: 'Hosted by David Liao.',
     category: 'technical'
   }
 ]
