@@ -128,14 +128,6 @@ const Header = (props: { fixed: boolean }) => {
           >
             Home
           </NavButton>
-          {/* <NavButton
-            to='/about'
-            activeStyle={{
-              color: 'var(--purple)'
-            }}
-          >
-            About
-          </NavButton>
           <NavButton
             to='/events'
             activeStyle={{
@@ -143,6 +135,14 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             Events
+          </NavButton>
+          {/* <NavButton
+            to='/about'
+            activeStyle={{
+              color: 'var(--purple)'
+            }}
+          >
+            About
           </NavButton>
           <NavButton
             to='/blog'

@@ -122,6 +122,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.1.0"
       ],
       [
+        "moment",
+        "npm:2.27.0"
+      ],
+      [
         "prettier",
         "npm:2.0.5"
       ],
@@ -152,6 +156,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "typeface-dm-sans",
         "npm:1.1.3"
+      ],
+      [
+        "typeface-montserrat-alternates",
+        "npm:0.0.72"
       ],
       [
         "typeface-work-sans",
@@ -192,6 +200,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
             ["gh-pages", "npm:3.1.0"],
+            ["moment", "npm:2.27.0"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -200,6 +209,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-intersection-observer", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:8.27.1"],
             ["styled-components", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:5.1.1"],
             ["typeface-dm-sans", "npm:1.1.3"],
+            ["typeface-montserrat-alternates", "npm:0.0.72"],
             ["typeface-work-sans", "npm:0.0.72"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -13940,6 +13950,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
             ["gh-pages", "npm:3.1.0"],
+            ["moment", "npm:2.27.0"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -13948,6 +13959,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-intersection-observer", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:8.27.1"],
             ["styled-components", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:5.1.1"],
             ["typeface-dm-sans", "npm:1.1.3"],
+            ["typeface-montserrat-alternates", "npm:0.0.72"],
             ["typeface-work-sans", "npm:0.0.72"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -20522,6 +20534,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typeface-dm-sans-npm-1.1.3-272e2000ba-6785afb6d2.zip/node_modules/typeface-dm-sans/",
           "packageDependencies": [
             ["typeface-dm-sans", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["typeface-montserrat-alternates", [
+        ["npm:0.0.72", {
+          "packageLocation": "./.yarn/cache/typeface-montserrat-alternates-npm-0.0.72-64e74dc2e7-0a0b936258.zip/node_modules/typeface-montserrat-alternates/",
+          "packageDependencies": [
+            ["typeface-montserrat-alternates", "npm:0.0.72"]
           ],
           "linkType": "HARD",
         }]

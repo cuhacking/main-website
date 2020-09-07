@@ -19,12 +19,15 @@ body {
   --text: var(--black);
   --desktop-width: 1200px;
   --mobile-width: 90vw;
+  --border-radius: 6px;
 
   --purple2: #7c39bf;
   --darkgrey: #15171a;
   --midgrey: #738a94;
   --lightgrey: #c5d2d9;
   --whitegrey: #e5eff5;
+
+  --monsterrat: 'Montserrat Alternates', sans-serif;
 
   background-color: var(--bkg);
   color: var(--text);
