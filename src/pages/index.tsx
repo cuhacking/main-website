@@ -183,7 +183,7 @@ const IndexPage = () => {
               Come be a part of the wave.
             </p>
             {/* <Button link='/about'>Learn More</Button> */}
-            <Button external link='https://discord.gg/uzBDZEY'>
+            <Button external link='https://discord.gg/TGvYPnD'>
               Join Our Discord Server
             </Button>
           </TextContainer>
