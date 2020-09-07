@@ -273,7 +273,7 @@ const Footer = () => (
             }}
           >
             About
-          </NavButton>
+          </NavButton> */}
           <NavButton
             to='/events'
             activeStyle={{
@@ -282,7 +282,7 @@ const Footer = () => (
           >
             Events
           </NavButton>
-          <NavButton
+          {/* <NavButton
             to='/blog'
             activeStyle={{
               color: 'var(--purple)'
