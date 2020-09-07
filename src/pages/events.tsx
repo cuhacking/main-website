@@ -17,12 +17,17 @@ import { LogoHeader } from 'components/logoHeader'
 
 type Category = 'discussion' | 'pd' | 'skills' | 'technical'
 
+interface Link {
+  url: string
+  label: string
+}
+
 interface Event {
   readonly title: string
   readonly time: Moment
   readonly description: string
   readonly category: Category
-  readonly link?: [url: string, text: string];
+  readonly link?: Link
 }
 
 const events: Event[] = [
@@ -32,7 +37,7 @@ const events: Event[] = [
     description:
       'Online Town. Allows participants to chat and meet one another.',
     category: 'discussion',
-    link: ["https://www.google.com/", "Test Link"]
+    link: { url: 'https://www.google.com/', label: 'Test Link' }
   },
   {
     title: 'Academic Info Panel',
@@ -79,11 +84,11 @@ const EventsContainer = styled.div`
   flex-wrap: wrap;
 
   &:first-child {
-      margin-top: 50px;
+    margin-top: 50px;
   }
 
   &:last-child {
-      margin-bottom: 50px;
+    margin-bottom: 50px;
   }
 
   width: var(--mobile-width);
@@ -92,7 +97,7 @@ const EventsContainer = styled.div`
     max-width: var(--desktop-width);
 
     &:first-child {
-        margin-top: 100px;
+      margin-top: 100px;
     }
 
     flex-direction: row;
@@ -101,7 +106,6 @@ const EventsContainer = styled.div`
 
 const EventsHeader = styled.h1`
   color: var(--dark-purple);
-  font-size: 3em;
   font-weight: normal;
 
   width: calc(100% - 15px);
@@ -126,7 +130,7 @@ const EventCardContainer = styled.div`
   margin: 15px;
 `
 
-const EventTitle = styled.h1`
+const EventTitle = styled.h2`
   margin: 5px 0 0 0;
 `
 
@@ -162,22 +166,29 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: -5px;
 `
 
-const EventLink = (props: {link: [url: string, text: string]}) => {
-  const [url, text] = props.link;
-  return <EventAnchor href={url}>{text}<StyledIcon icon={faExternalLinkAlt} size='1x' /></EventAnchor>
+const EventLink = (props: { link: Link }) => {
+  const { url, label } = props.link
+  return (
+    <EventAnchor href={url}>
+      {label}
+      <StyledIcon icon={faExternalLinkAlt} size='1x' />
+    </EventAnchor>
+  )
 }
 
 const EventCard = (event: Event) => {
-  return <EventCardContainer>
-              <EventGraphic src={categoryToEvent(event.category)} />
-              <EventTitle>{event.title}</EventTitle>
-              <EventTime>
-                {event.time.format('h:mm a • ') +
-                  event.time.format('D MMM YYYY').toUpperCase()}
-              </EventTime>
-              <EventDescription>{event.description}</EventDescription>
-              {event.link && (<EventLink link={event.link} />)}
-            </EventCardContainer>
+  return (
+    <EventCardContainer>
+      <EventGraphic src={categoryToEvent(event.category)} />
+      <EventTitle>{event.title}</EventTitle>
+      <EventTime>
+        {event.time.format('h:mma • ') +
+          event.time.format('D MMM YYYY').toUpperCase()}
+      </EventTime>
+      <EventDescription>{event.description}</EventDescription>
+      {event.link && <EventLink link={event.link} />}
+    </EventCardContainer>
+  )
 }
 
 const categoryToEvent = (category: Category): string => {
@@ -197,10 +208,10 @@ const EventsPage = () => {
     <PageLayout>
       <SEO title='Events' />
       <SplashContainer>
-        <LogoHeader text={"Events"} />
+        <LogoHeader text={'Events'} />
       </SplashContainer>
       <EventsContainer>
-      <EventsHeader>September</EventsHeader>
+        <EventsHeader>September</EventsHeader>
         {events
           .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
           .filter((event) => event.time > moment())
@@ -212,7 +223,7 @@ const EventsPage = () => {
       {events.filter((event) => event.time < moment()).length > 0 && (
         <>
           <EventsContainer>
-          <EventsHeader>Past Events</EventsHeader>
+            <EventsHeader>Past Events</EventsHeader>
 
             {events
               .sort((a, b) => a.time.milliseconds() - b.time.millisecond())

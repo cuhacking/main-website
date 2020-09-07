@@ -18,7 +18,6 @@ const HeaderContainer = styled.div`
     justify-content: left;
     align-content: center;
   }
-
 `
 
 const CuHackingText = styled.h1`
@@ -26,10 +25,15 @@ const CuHackingText = styled.h1`
   font-weight: semi-bold;
 
   font-size: 3rem;
-  @media only screen and (min-width: 1200px) {
-    font-size: 6rem;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 4rem;
   }
-  
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 5rem;
+  }
+
   margin: 0 16px 0 0;
 `
 
@@ -37,10 +41,15 @@ const RegularText = styled.h1`
   font-weight: normal;
 
   font-size: 3rem;
-  @media only screen and (min-width: 1200px) {
-    font-size: 6rem;
+
+  @media only screen and (min-width: 700px) {
+    font-size: 4rem;
   }
-  
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 5rem;
+  }
+
   margin: 0;
 `
 
