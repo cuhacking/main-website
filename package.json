@@ -39,7 +39,7 @@
     "@types/styled-components": "^5",
     "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "2.0.5",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "build": "gatsby build",

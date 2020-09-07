@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { PageLayout } from 'layouts'
 import { Button, SEO } from 'components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 import bkgUrl from 'images/bkg-small.svg'
 import eventDiscussion from 'images/event-discussion.svg'
@@ -20,6 +22,7 @@ interface Event {
   readonly time: Moment
   readonly description: string
   readonly category: Category
+  readonly link?: [url: string, text: string];
 }
 
 const events: Event[] = [
@@ -28,7 +31,8 @@ const events: Event[] = [
     time: moment.parseZone('2020-09-01T19:00-04:00'),
     description:
       'Online Town. Allows participants to chat and meet one another.',
-    category: 'discussion'
+    category: 'discussion',
+    link: ["https://www.google.com/", "Test Link"]
   },
   {
     title: 'Academic Info Panel',
@@ -90,10 +94,6 @@ const EventsContainer = styled.div`
     &:first-child {
         margin-top: 100px;
     }
-    
-    &:last-child {
-        margin-bottom: 100px;
-    }
 
     flex-direction: row;
   }
@@ -108,7 +108,7 @@ const EventsHeader = styled.h1`
   margin-left: 15px;
 `
 
-const EventCard = styled.div`
+const EventCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: calc(100% - 30px);
@@ -146,11 +146,38 @@ const EventGraphic = styled.img`
   height: 50px;
 `
 
-const CuHackingText = styled.h1`
-  font-family: var(--monsterrat);
-  color: var(--white);
-  font-weight: semi-bold;
+const EventAnchor = styled.a`
+  color: var(--light-purple) !important;
+  max-width: max-content;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
 `
+
+const StyledIcon = styled(FontAwesomeIcon)`
+  margin-left: 10px;
+  margin-top: -2px;
+  margin-right: -5px;
+`
+
+const EventLink = (props: {link: [url: string, text: string]}) => {
+  const [url, text] = props.link;
+  return <EventAnchor href={url}>{text}<StyledIcon icon={faExternalLinkAlt} size='1x' /></EventAnchor>
+}
+
+const EventCard = (event: Event) => {
+  return <EventCardContainer>
+              <EventGraphic src={categoryToEvent(event.category)} />
+              <EventTitle>{event.title}</EventTitle>
+              <EventTime>
+                {event.time.format('h:mm a • ') +
+                  event.time.format('D MMM YYYY').toUpperCase()}
+              </EventTime>
+              <EventDescription>{event.description}</EventDescription>
+              {event.link && (<EventLink link={event.link} />)}
+            </EventCardContainer>
+}
 
 const categoryToEvent = (category: Category): string => {
   if (category === 'discussion') {
@@ -177,15 +204,7 @@ const EventsPage = () => {
           .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
           .filter((event) => event.time > moment())
           .map((event) => (
-            <EventCard>
-              <EventGraphic src={categoryToEvent(event.category)} />
-              <EventTitle>{event.title}</EventTitle>
-              <EventTime>
-                {event.time.format('h:mm a • ') +
-                  event.time.format('D MMM YYYY').toUpperCase()}
-              </EventTime>
-              <EventDescription>{event.description}</EventDescription>
-            </EventCard>
+            <EventCard {...event} />
           ))}
       </EventsContainer>
 
@@ -198,15 +217,7 @@ const EventsPage = () => {
               .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
               .filter((event) => event.time < moment())
               .map((event) => (
-                <EventCard>
-                  <EventGraphic src={categoryToEvent(event.category)} />
-                  <EventTitle>{event.title}</EventTitle>
-                  <EventTime>
-                    {event.time.format('h:mm a • ') +
-                      event.time.format('D MMM YYYY').toUpperCase()}
-                  </EventTime>
-                  <EventDescription>{event.description}</EventDescription>
-                </EventCard>
+                <EventCard {...event} />
               ))}
           </EventsContainer>
         </>
