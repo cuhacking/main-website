@@ -15,25 +15,31 @@ const HeaderContainer = styled.div`
   @media only screen and (min-width: 1200px) {
     width: var(--desktop-width);
     flex-direction: row;
-    font-size: 16px;
     justify-content: left;
     align-content: center;
   }
 
-  font-size: 10px;
 `
 
 const CuHackingText = styled.h1`
   font-family: var(--monsterrat);
   font-weight: semi-bold;
-    font-size: 5em;
+
+  font-size: 3rem;
+  @media only screen and (min-width: 1200px) {
+    font-size: 6rem;
+  }
   
   margin: 0 16px 0 0;
 `
 
 const RegularText = styled.h1`
   font-weight: normal;
-  font-size: 5em;
+
+  font-size: 3rem;
+  @media only screen and (min-width: 1200px) {
+    font-size: 6rem;
+  }
   
   margin: 0;
 `

@@ -101,7 +101,7 @@ const EventsContainer = styled.div`
 
 const EventsHeader = styled.h1`
   color: var(--dark-purple);
-  font-size: 48px;
+  font-size: 3em;
   font-weight: normal;
 
   width: calc(100% - 15px);
@@ -132,13 +132,14 @@ const EventTitle = styled.h1`
 
 const EventTime = styled.h3`
   color: var(--light-purple);
-  font-size: 18px;
+  font-size: 1.15em;
+  font-weight: normal;
 
   margin: 0 0 5px 0;
 `
 
 const EventDescription = styled.p`
-  font-size: 18px;
+  font-size: 1.15em;
 `
 
 const EventGraphic = styled.img`
