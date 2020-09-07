@@ -20,6 +20,7 @@ const StyledHeader = styled.header<{
   left: 0;
   z-index: 1;
   overflow: hidden;
+  color: ${({ isDark }) => isDark ? 'var(--white)' : 'var(--black)'};
 
   display: flex;
   flex-direction: column;
@@ -90,8 +91,6 @@ const NavButton = styled(Link)`
   @media only screen and (min-width: 700px) {
     font-size: 1.125rem;
     margin: 0 0 0 40px;
-
-    transition: color 0.1s ease-in;
 
     &:hover {
       color: var(--light-purple) !important;
