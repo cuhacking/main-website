@@ -122,8 +122,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.1.0"
       ],
       [
-        "moment",
-        "npm:2.27.0"
+        "moment-timezone",
+        "npm:0.5.31"
       ],
       [
         "prettier",
@@ -200,7 +200,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
             ["gh-pages", "npm:3.1.0"],
-            ["moment", "npm:2.27.0"],
+            ["moment-timezone", "npm:0.5.31"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -13950,7 +13950,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-source-ghost", "npm:4.0.5"],
             ["gatsby-transformer-sharp", "virtual:cd4143a08ebcb378b554db9ee0f4783ea71ecd465bf23694c1940883a0541e004cf02b1bb2eaa8bb73b323697c642041944b667495f7ede14a39a5ce2c4630df#npm:2.5.13"],
             ["gh-pages", "npm:3.1.0"],
-            ["moment", "npm:2.27.0"],
+            ["moment-timezone", "npm:0.5.31"],
             ["prettier", "npm:2.0.5"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -14533,6 +14533,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:2.27.0", {
           "packageLocation": "./.yarn/cache/moment-npm-2.27.0-0e670d438d-72d9a7d8db.zip/node_modules/moment/",
           "packageDependencies": [
+            ["moment", "npm:2.27.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["moment-timezone", [
+        ["npm:0.5.31", {
+          "packageLocation": "./.yarn/cache/moment-timezone-npm-0.5.31-541ea51e9e-db8c241301.zip/node_modules/moment-timezone/",
+          "packageDependencies": [
+            ["moment-timezone", "npm:0.5.31"],
             ["moment", "npm:2.27.0"]
           ],
           "linkType": "HARD",

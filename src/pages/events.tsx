@@ -12,7 +12,7 @@ import eventPd from 'images/event-pd.svg'
 import eventSoftSkills from 'images/event-soft-skills.svg'
 import eventTechnical from 'images/event-technical.svg'
 
-import moment, { Moment } from 'moment'
+import moment, { Moment } from 'moment-timezone'
 import { LogoHeader } from 'components/logoHeader'
 
 type Category = 'discussion' | 'pd' | 'skills' | 'technical'
@@ -33,42 +33,42 @@ interface Event {
 const events: Event[] = [
   {
     title: 'Online Town Social Hangout',
-    time: moment.parseZone('2020-09-08T19:00-04:00'),
+    time: moment.tz('2020-09-08 19:00', 'America/Toronto'),
     description:
       'Online Town. Allows participants to chat and meet one another in a virtual physical space.',
     category: 'discussion'
   },
   {
     title: 'Academic Info Panel',
-    time: moment.parseZone('2020-09-09T19:00-04:00'),
+    time: moment.tz('2020-09-09 19:00', 'America/Toronto'),
     description:
       'A Q&A session where participants will have the opportunity to ask their university-related questions to 3rd+ year students from Computer Science, Software Engineering, and Computer Systems Engineering.',
     category: 'pd'
   },
   {
     title: 'Introduction to Git and GitHub (Workshop)',
-    time: moment.parseZone('2020-09-09T20:00-04:00'),
+    time: moment.tz('2020-09-09 20:00', 'America/Toronto'),
     description:
       'Git is an instrumental tool for collaborating on code in the industry. In this workshop, participants will learn how to create and fork repositories, write proper commits, create Pull Requests and Issues, and set up Git on their computer. Hosted by Wal Wal.',
     category: 'technical'
   },
   {
     title: 'Internship Info Panel',
-    time: moment.parseZone('2020-09-10T18:00-04:00'),
+    time: moment.tz('2020-09-10 18:00', 'America/Toronto'),
     description:
       'A Q&A session where participants will have the opportunity to ask their internship-related questions to seasoned co-op students.',
     category: 'pd'
   },
   {
     title: 'Discord Social Night and Networking',
-    time: moment.parseZone('2020-09-10T19:00-04:00'),
+    time: moment.tz('2020-09-10 19:00', 'America/Toronto'),
     description:
       'A virtual social on Discord! Join us in our voice chats to talk and network with other hackers in the community.',
     category: 'discussion'
   },
   {
     title: 'Movie Night on Netflix Party',
-    time: moment.parseZone('2020-09-11T20:00-04:00'),
+    time: moment.tz('2020-09-11 20:00', 'America/Toronto'),
     description: 'Join us for a movie! The movie will be announced on Discord.',
     category: 'discussion',
     link: {
@@ -78,7 +78,7 @@ const events: Event[] = [
   },
   {
     title: 'Kotlin: like Java but so much better (Workshop)',
-    time: moment.parseZone('2020-09-12T12:00-04:00'),
+    time: moment.tz('2020-09-12 12:00', 'America/Toronto'),
     description:
       'What makes Kotlin the 4th most loved language by developers? Find out in this workshop that will explore the features that make Kotlin a concise, powerful, and smart language. Please install IntelliJ (linked below) before the attending the workshop. Hosted by Derek Ellis.',
     category: 'technical',
@@ -89,14 +89,14 @@ const events: Event[] = [
   },
   {
     title: 'Discord Community Game Night',
-    time: moment.parseZone('2020-09-12T20:00-04:00'),
+    time: moment.tz('2020-09-12 20:00', 'America/Toronto'),
     description:
       'Join us for a some video games such as League of Legends, Skribbl.io, and more! The games that are played will be decided by the community on Discord.',
     category: 'discussion'
   },
   {
     title: 'Learn to Build on the Cloud using Amazon Web Services (Workshop)',
-    time: moment.parseZone('2020-09-13T15:00-04:00'),
+    time: moment.tz('2020-09-13 15:00', 'America/Toronto'),
     description:
       'Cloud computing has drastically changed how businesses provide and consume technology. Come out to this workshop to learn all about cloud computing, and then publicly deploy your own website on the internet using AWS! No prerequisites required. Hosted by David Liao.',
     category: 'technical'
@@ -223,7 +223,7 @@ const EventCard = (event: Event) => {
       <EventGraphic src={categoryToEvent(event.category)} />
       <EventTitle>{event.title}</EventTitle>
       <EventTime>
-        {event.time.format('h:mma • ') +
+        {event.time.tz('America/Toronto').format('h:mma z • ') +
           event.time.format('D MMM YYYY').toUpperCase()}
       </EventTime>
       <EventDescription>{event.description}</EventDescription>
@@ -265,7 +265,6 @@ const EventsPage = () => {
         <>
           <EventsContainer>
             <EventsHeader>Past Events</EventsHeader>
-
             {events
               .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
               .filter((event) => event.time < moment())
