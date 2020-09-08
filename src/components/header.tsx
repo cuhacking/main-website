@@ -26,7 +26,7 @@ const StyledHeader = styled.header<{
   flex-direction: column;
   width: 100vw;
   /* change 10rem to 20rem when adding the nav options back*/
-  height: ${(props) => (props.isOpen ? '10rem' : '65px')};
+  height: ${(props) => (props.isOpen ? '12rem' : '65px')};
   justify-content: flex-start;
   align-items: center;
 
@@ -77,6 +77,7 @@ const NavMenu = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   width: var(--mobile-width);
+  color: var(--white);
 
   @media only screen and (min-width: 700px) {
     display: none;
