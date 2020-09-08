@@ -40,7 +40,7 @@ const events: Event[] = [
   },
   {
     title: 'Academic Info Panel',
-    time: moment.parseZone('2020-09-09T18:00-04:00'),
+    time: moment.parseZone('2020-09-09T19:00-04:00'),
     description:
       'A Q&A session where participants will have the opportunity to ask their university-related questions to 3rd+ year students from Computer Science, Software Engineering, and Computer Systems Engineering.',
     category: 'pd'
