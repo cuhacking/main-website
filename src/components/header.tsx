@@ -20,13 +20,13 @@ const StyledHeader = styled.header<{
   left: 0;
   z-index: 1;
   overflow: hidden;
-  color: ${({ isDark }) => isDark ? 'var(--white)' : 'var(--black)'};
+  color: ${({ isDark }) => (isDark ? 'var(--white)' : 'var(--black)')};
 
   display: flex;
   flex-direction: column;
   width: 100vw;
   /* change 10rem to 20rem when adding the nav options back*/
-  height: ${(props) => (props.isOpen ? '10rem' : '65px')};
+  height: ${(props) => (props.isOpen ? '12rem' : '65px')};
   justify-content: flex-start;
   align-items: center;
 
@@ -77,6 +77,7 @@ const NavMenu = styled.nav`
   justify-content: flex-start;
   align-items: flex-end;
   width: var(--mobile-width);
+  color: var(--white);
 
   @media only screen and (min-width: 700px) {
     display: none;
@@ -163,14 +164,6 @@ const Header = (props: { fixed: boolean }) => {
         >
           Home
         </NavButton>
-        {/* <NavButton
-          to='/about'
-          activeStyle={{
-            color: 'var(--purple)'
-          }}
-        >
-          About
-        </NavButton>
         <NavButton
           to='/events'
           activeStyle={{
@@ -178,6 +171,14 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           Events
+        </NavButton>
+        {/* <NavButton
+          to='/about'
+          activeStyle={{
+            color: 'var(--purple)'
+          }}
+        >
+          About
         </NavButton>
         <NavButton
           to='/blog'
