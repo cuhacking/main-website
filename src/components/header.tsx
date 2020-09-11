@@ -26,7 +26,7 @@ const StyledHeader = styled.header<{
   flex-direction: column;
   width: 100vw;
   /* change 10rem to 20rem when adding the nav options back*/
-  height: ${(props) => (props.isOpen ? '12rem' : '65px')};
+  height: ${(props) => (props.isOpen ? '15rem' : '65px')};
   justify-content: flex-start;
   align-items: center;
 
@@ -143,7 +143,7 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             About
-          </NavButton>
+          </NavButton> */}
           <NavButton
             to='/blog'
             partiallyActive={true}
@@ -152,7 +152,7 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             Blog
-          </NavButton> */}
+          </NavButton>
         </ButtonDiv>
       </NavBar>
       <NavMenu>
@@ -179,7 +179,7 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           About
-        </NavButton>
+        </NavButton> */}
         <NavButton
           to='/blog'
           activeStyle={{
@@ -187,7 +187,7 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           Blog
-        </NavButton> */}
+        </NavButton>
       </NavMenu>
     </StyledHeader>
   )
