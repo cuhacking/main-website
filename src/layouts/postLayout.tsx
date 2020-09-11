@@ -2,8 +2,28 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { SEO } from 'components'
 import PageLayout from './pageLayout'
+import ProfileIcon from 'images/DefaultProfileIcon.png'
+import { LogoHeader } from 'components/logoHeader'
+import styled from 'styled-components'
+import bkgUrl from 'images/bkg-small.svg'
 
 import './postLayout.css'
+
+const SplashContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: calc(40vh);
+
+  background: bottom / cover no-repeat url(${bkgUrl});
+
+  @media only screen and (min-width: 700px) {
+    justify-content: flex-start;
+  }
+`
 
 export default ({ data: { ghostPost: post } }) => {
   const months = [
@@ -20,7 +40,7 @@ export default ({ data: { ghostPost: post } }) => {
     'NOV',
     'DEC'
   ]
-
+  console.log(post)
   const month = new Date(post.published_at).getMonth()
   post.published_at =
     new Date(post.published_at).getDate() +
@@ -31,8 +51,10 @@ export default ({ data: { ghostPost: post } }) => {
   return (
     <PageLayout>
       <SEO title={post.title} />
-      {/* <main id='site-main' className='site-main outer'> */}
-      <div className='inner'>
+      <SplashContainer>
+        <LogoHeader text={'Blog'} />
+      </SplashContainer>
+      <div className='inner' id='article'>
         <article className='post-full post'>
           <header className='post-full-header'>
             <section className='post-full-tags'>
@@ -45,7 +67,8 @@ export default ({ data: { ghostPost: post } }) => {
 
             <h1 className='post-full-title'>{post.title}</h1>
 
-            <p className='post-full-custom-excerpt'>{post.excerpt}</p>
+            <p className='post-full-custom-excerpt'>{post.custom_excerpt}</p>
+            <hr></hr>
 
             <div className='post-full-byline'>
               <section className='post-full-byline-content'>
@@ -67,7 +90,11 @@ export default ({ data: { ghostPost: post } }) => {
                       <div className='author-avatar'>
                         <img
                           className='author-profile-image'
-                          src={author.profile_image}
+                          src={
+                            author.profile_image
+                              ? author.profile_image
+                              : ProfileIcon
+                          }
                           alt='Ghost'
                         />
                       </div>
@@ -76,7 +103,6 @@ export default ({ data: { ghostPost: post } }) => {
                 </ul>
 
                 <section className='post-full-byline-meta'>
-                  {/* <h4 className="author-name"><a href="/author/ghost/">{post.primary_author.name}</a></h4> */}
                   <h4 className='author-name'>{post.primary_author.name}</h4>
 
                   <div className='byline-meta-content'>
@@ -146,6 +172,7 @@ export const postQuery = graphql`
       }
       published_at
       excerpt
+      custom_excerpt
       primary_author {
         name
       }
