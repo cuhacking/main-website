@@ -2,127 +2,107 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { PageLayout } from 'layouts'
 import { SEO } from 'components'
+import styled from 'styled-components'
 
-import './blog.css'
-import BlogCard from 'components/blog-card'
-import HeaderSmall from 'components/headerSmall'
-import FeatureImage from 'images/default-feature-image.jpg'
+import BlogCard from 'components/blogCard'
+import BlogCardFeatured from 'components/blogCardFeatured'
+import bkgUrl from 'images/bkg-small.svg'
+import { LogoHeader } from 'components/logoHeader'
 
 export default ({ data }) => {
   const posts = data.allGhostPost.edges.map((edge) => edge.node)
 
-  const months = [
-    'JAN',
-    'FEB',
-    'MAR',
-    'APR',
-    'MAY',
-    'JUN',
-    'JULY',
-    'AUG',
-    'SEPT',
-    'OCT',
-    'NOV',
-    'DEC'
-  ]
+  const SplashContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  const month = new Date(posts[0].published_at).getMonth()
-  const formatted_published_at =
-    new Date(posts[0].published_at).getDate() +
-    ' ' +
-    months[month] +
-    ' ' +
-    new Date(posts[0].published_at).getFullYear()
+    width: 100%;
+    height: calc(40vh);
+
+    background: bottom / cover no-repeat url(${bkgUrl});
+
+    @media only screen and (min-width: 700px) {
+      justify-content: flex-start;
+    }
+  `
+
+  const Container = styled.div`
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 576px) {
+          max-width: 540px;
+  }
+  @media (min-width: 768px) {}
+        max-width: 720px;
+  }
+  @media (min-width: 992px) {
+        max-width: 960px;
+}
+`
+
+  const Row = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  `
+
+  const ColMd4 = styled.div`
+    @media (min-width: 768px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  `
+
+  let text
+
+  if (posts[0]) {
+    text = (
+      <div className='card mb-2'>
+        <Link to={posts[0].slug}>
+          <BlogCardFeatured
+            title={posts[0].title}
+            excerpt={
+              posts[0].custom_excerpt
+                ? posts[0].custom_excerpt
+                : posts[0].excerpt.substring(0, 150)
+            }
+            feature_image={posts[0].feature_image}
+            reading_time={posts[0].reading_time}
+            slug={posts[0].slug}
+            published_at={posts[0].published_at}
+            tags={posts[0].tags}
+            primary_author_name={posts[0].primary_author.name}
+            authors={posts[0].authors}
+          />
+        </Link>
+      </div>
+    )
+  } else {
+    text = <p>No posts are available</p>
+  }
 
   return (
     <PageLayout>
       <SEO title='Blog' />
-      <HeaderSmall title='cuHacking' subtitle='Blog' />
-      <div className='container'>
-        <div className='card mb-2'>
-          <Link to={posts[0].slug}>
-            <div className='row'>
-              <div className='col-md-6'>
-                <img
-                  src={
-                    posts[0].feature_image == null
-                      ? FeatureImage
-                      : posts[0].feature_image
-                  }
-                  alt='img'
-                  className='card-img-top'
-                />
-              </div>
-              <div className='col-md-6'>
-                <div className='card mb-2'>
-                  <div className='card-body'>
-                    {posts[0].tags ? (
-                      posts[0].tags.map((tag: any) => (
-                        <span className='tag' key='tag.name'>
-                          {tag.name.toUpperCase()}
-                        </span>
-                      ))
-                    ) : (
-                      <span className='tag' key='tag.name'>
-                        {'  '}
-                      </span>
-                    )}
-                    <h2>{posts[0].title}</h2>
-                    <p>{posts[0].excerpt}</p>
-                    <section className='post-full-byline-content'>
-                      <ul className='author-list'>
-                        {posts[0].authors.map((author: any) => (
-                          <li className='author-list-item' key='author.name'>
-                            <div className='author-card'>
-                              <img
-                                className='author-profile-image'
-                                src={author.profile_image}
-                                alt='Ghost'
-                              />
-                              <div className='author-info'>
-                                <div className='bio'>
-                                  <h2>{author.name}</h2>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='author-avatar'>
-                              <img
-                                className='author-profile-image'
-                                src={author.profile_image}
-                                alt='Ghost'
-                              />
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
+      {/* <HeaderSmall title='cuHacking' subtitle='Blog' /> */}
+      <SplashContainer>
+        <LogoHeader text={'Blog'} />
+      </SplashContainer>
 
-                      <section className='post-full-byline-meta'>
-                        {/* <h4 className="author-name"><a href="/author/ghost/">{primary_author_name}</a></h4> */}
-                        <h4 className='author-name'>
-                          {posts[0].primary_author.name}
-                        </h4>
+      <Container>
+        {text}
+        <hr />
 
-                        <div className='byline-meta-content'>
-                          <time className='byline-meta-date'>
-                            {formatted_published_at}
-                          </time>
-                          <span className='byline-reading-time'>
-                            <span className='bull'>•</span>{' '}
-                            {posts[0].reading_time} min read
-                          </span>
-                        </div>
-                      </section>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className='row'>
+        <Row>
           {posts.slice(1).map((post: any) => (
-            <div className='col-md-4' key={post.id}>
+            <ColMd4 key={post.id}>
               <BlogCard
                 title={post.title}
                 excerpt={post.excerpt}
@@ -134,10 +114,10 @@ export default ({ data }) => {
                 primary_author_name={post.primary_author.name}
                 authors={post.authors}
               />
-            </div>
+            </ColMd4>
           ))}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </PageLayout>
   )
 }
