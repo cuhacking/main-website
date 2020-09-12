@@ -268,9 +268,8 @@ const EventsPage = () => {
             {events
               .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
               .filter((event) => event.time < moment())
-              .map((event) => (
-                <EventCard {...event} />
-              ))}
+              .map((event) => <EventCard {...event} />)
+              .reverse()}
           </EventsContainer>
         </>
       )}
