@@ -46,10 +46,10 @@ const events: Event[] = [
     category: 'pd'
   },
   {
-    title: 'Introduction to Git and GitHub (Workshop)',
+    title: 'Introduction to GitHub (Workshop)',
     time: moment.tz('2020-09-09 20:00', 'America/Toronto'),
     description:
-      'Git is an instrumental tool for collaborating on code in the industry. In this workshop, participants will learn how to create and fork repositories, write proper commits, create Pull Requests and Issues, and set up Git on their computer. Hosted by Wal Wal.',
+      'GitHub is the defacto tool for collaborating on code in the industry. In this workshop, participants will learn how to create and fork repositories, write proper commits, create Pull Requests, all in the browser. Hosted by Wal Wal.',
     category: 'technical'
   },
   {
@@ -99,6 +99,13 @@ const events: Event[] = [
     time: moment.tz('2020-09-13 15:00', 'America/Toronto'),
     description:
       'Cloud computing has drastically changed how businesses provide and consume technology. Come out to this workshop to learn all about cloud computing, and then publicly deploy your own website on the internet using AWS! No prerequisites required. Hosted by David Liao.',
+    category: 'technical'
+  },
+  {
+    title: 'Introduction to Git (Workshop)',
+    time: moment.tz('2020-09-13 16:30', 'America/Toronto'),
+    description:
+      'Git is the brains behind GitHub and is a powerful tool for managing code on your machine. In this workshop, participants will set up Git on their computer and learn how to use it to interact with GitHub. Hosted by Wal Wal.',
     category: 'technical'
   }
 ]
