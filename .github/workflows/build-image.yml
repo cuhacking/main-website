@@ -26,6 +26,4 @@ jobs:
 
       - name: Push image
         if: success()
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: docker push docker.pkg.github.com/cuhacking/main-website/main-website:latest
