@@ -1,0 +1,31 @@
+name: Build Image
+
+on:
+  push:
+    tags:
+      - '*'
+  pull_request:
+    branches: [master]
+
+jobs:
+  publish-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Authenticate package registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login https://docker.pkg.github.com -u ${GITHUB_ACTOR} --password-stdin
+
+      - name: Set up ghost config
+        env:
+          GHOST_CONFIG: ${{ secrets.GHOST_CONFIG }}
+        run: echo "$GHOST_CONFIG" > ghostConfig.json
+
+      - name: Build dist
+        run: docker build -t docker.pkg.github.com/cuhacking/main-website/main-website .
+
+      - name: Push image
+        if: success()
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: docker push docker.pkg.github.com/cuhacking/main-website/main-website:latest
