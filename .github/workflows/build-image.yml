@@ -21,9 +21,9 @@ jobs:
           GHOST_CONFIG: ${{ secrets.GHOST_CONFIG }}
         run: echo "$GHOST_CONFIG" > ghostConfig.json
 
-      - name: Build dist
-        run: docker build -t docker.pkg.github.com/cuhacking/main-website/main-website .
-
-      - name: Push image
-        if: success()
-        run: docker push docker.pkg.github.com/cuhacking/main-website/main-website:latest
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: docker.pkg.github.com/cuhacking/main-website/main-website:latest
