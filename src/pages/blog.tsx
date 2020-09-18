@@ -17,10 +17,8 @@ export default ({ data }) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: calc(40vh);
-
     background: bottom / cover no-repeat url(${bkgUrl});
 
     @media only screen and (min-width: 700px) {
@@ -34,17 +32,11 @@ export default ({ data }) => {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-
-    @media (min-width: 576px) {
-          max-width: 540px;
-  }
-  @media (min-width: 768px) {}
-        max-width: 720px;
-  }
-  @media (min-width: 992px) {
-        max-width: 960px;
-}
-`
+    max-width: var(--mobile-width);
+    @media (min-width: 1200px) {
+      max-width: var(--desktop-width);
+    }
+  `
 
   const Row = styled.div`
     display: flex;
@@ -60,6 +52,12 @@ export default ({ data }) => {
     }
   `
 
+  const HorizontalRuler = styled.hr`
+    @media (max-width: 768px) {
+      display: none;
+    }
+  `
+
   let text
 
   if (posts[0]) {
@@ -71,7 +69,7 @@ export default ({ data }) => {
             excerpt={
               posts[0].custom_excerpt
                 ? posts[0].custom_excerpt
-                : posts[0].excerpt.substring(0, 150)
+                : posts[0].excerpt.substring(0, 175)
             }
             feature_image={posts[0].feature_image}
             reading_time={posts[0].reading_time}
@@ -98,14 +96,18 @@ export default ({ data }) => {
 
       <Container>
         {text}
-        <hr />
+        <HorizontalRuler />
 
         <Row>
           {posts.slice(1).map((post: any) => (
             <ColMd4 key={post.id}>
               <BlogCard
                 title={post.title}
-                excerpt={post.excerpt}
+                excerpt={
+                  post.custom_excerpt
+                    ? post.custom_excerpt
+                    : post.excerpt.substring(0, 175)
+                }
                 feature_image={post.feature_image}
                 reading_time={post.reading_time}
                 slug={post.slug}
