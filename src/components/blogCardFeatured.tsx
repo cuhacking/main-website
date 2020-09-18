@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import FeatureImage from 'images/default-feature-image.jpg'
 import ProfileIcon from 'images/DefaultProfileIcon.png'
+import { formatDate } from './helpers'
 
 const Card = styled.div`
   margin: 15px;
@@ -20,26 +20,42 @@ const CardBody = styled.div`
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `
 
 const CardImgTop = styled.img`
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  max-height: 400px;
 `
 
 const Tag = styled.span`
   color: var(--purple2);
 `
 
-const ColMd6 = styled.div`
+const ColMd8 = styled.div`
   position: relative;
   width: 100%;
   min-height: 1px;
 
   @media (min-width: 768px) {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 65%;
+    max-width: 65%;
+  }
+`
+
+const ColMd4 = styled.div`
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+
+  @media (min-width: 768px) {
+    flex: 0 0 35%;
+    max-width: 35%;
   }
 `
 
@@ -48,6 +64,14 @@ const Row = styled.div`
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  margin-top: 75px;
+  @media (max-width: 768px) {
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    border: 2px solid #bfbfbf;
+    border-radius: var(--border-radius);
+    margin: 4px;
+  }
 `
 const Small = styled.div`
   font-size: 62.5%;
@@ -76,38 +100,15 @@ const BlogCardFeatured = ({
   authors,
   primary_author_name
 }: BlogCardProps) => {
-  console.log(feature_image)
-  const months = [
-    'JAN',
-    'FEB',
-    'MAR',
-    'APR',
-    'MAY',
-    'JUN',
-    'JULY',
-    'AUG',
-    'SEPT',
-    'OCT',
-    'NOV',
-    'DEC'
-  ]
-
-  const month = new Date(published_at).getMonth()
-  const formatted_published_at =
-    new Date(published_at).getDate() +
-    ' ' +
-    months[month] +
-    ' ' +
-    new Date(published_at).getFullYear()
   return (
     <Row>
-      <ColMd6>
+      <ColMd8>
         <CardImgTop
           src={feature_image == null ? FeatureImage : feature_image}
           alt='img'
         />
-      </ColMd6>
-      <ColMd6>
+      </ColMd8>
+      <ColMd4>
         <Card className='mb-2'>
           <CardBody>
             {tags ? (
@@ -155,10 +156,9 @@ const BlogCardFeatured = ({
 
                 <section className='post-full-byline-meta'>
                   <h4 className='author-name'>{primary_author_name}</h4>
-
                   <div className='byline-meta-content'>
                     <time className='byline-meta-date'>
-                      {formatted_published_at}
+                      {formatDate(published_at)}
                     </time>
                     <span className='byline-reading-time'>
                       <span className='bull'>•</span> {reading_time} min read
@@ -169,7 +169,7 @@ const BlogCardFeatured = ({
             </Small>
           </CardBody>
         </Card>
-      </ColMd6>
+      </ColMd4>
     </Row>
   )
 }

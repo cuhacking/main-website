@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-
 import FeatureImage from 'images/default-feature-image.jpg'
 import ProfileIcon from 'images/DefaultProfileIcon.png'
+import { formatDate } from './helpers'
 
 const Card = styled.div`
   margin: 15px;
@@ -15,6 +15,9 @@ const Card = styled.div`
   background-color: var(--white);
   background-clip: border-box;
   border-radius: 0.25rem;
+
+  border: 2px solid #bfbfbf;
+  border-radius: var(--border-radius);
 `
 
 const CardBody = styled.div`
@@ -60,29 +63,6 @@ const BlogCard = ({
   authors,
   primary_author_name
 }: BlogCardProps) => {
-  console.log(feature_image)
-  const months = [
-    'JAN',
-    'FEB',
-    'MAR',
-    'APR',
-    'MAY',
-    'JUN',
-    'JULY',
-    'AUG',
-    'SEPT',
-    'OCT',
-    'NOV',
-    'DEC'
-  ]
-
-  const month = new Date(published_at).getMonth()
-  const formatted_published_at =
-    new Date(published_at).getDate() +
-    ' ' +
-    months[month] +
-    ' ' +
-    new Date(published_at).getFullYear()
   return (
     <Card className='mb-2'>
       <Link to={'/blog/' + slug}>
@@ -129,12 +109,10 @@ const BlogCard = ({
               </ul>
 
               <section className='post-full-byline-meta'>
-                {/* <h4 className="author-name"><a href="/author/ghost/">{primary_author_name}</a></h4> */}
                 <h4 className='author-name'>{primary_author_name}</h4>
-
                 <div className='byline-meta-content'>
                   <time className='byline-meta-date'>
-                    {formatted_published_at}
+                    {formatDate(published_at)}
                   </time>
                   <span className='byline-reading-time'>
                     <span className='bull'>•</span> {reading_time} min read

@@ -3,9 +3,9 @@ import { graphql } from 'gatsby'
 import { SEO } from 'components'
 import PageLayout from './pageLayout'
 import ProfileIcon from 'images/DefaultProfileIcon.png'
-import { LogoHeader } from 'components/logoHeader'
 import styled from 'styled-components'
 import bkgUrl from 'images/bkg-small.svg'
+import { formatDate } from 'components/helpers'
 
 import './postLayout.css'
 
@@ -14,10 +14,8 @@ const SplashContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   height: calc(40vh);
-
   background: bottom / cover no-repeat url(${bkgUrl});
 
   @media only screen and (min-width: 700px) {
@@ -26,33 +24,10 @@ const SplashContainer = styled.div`
 `
 
 export default ({ data: { ghostPost: post } }) => {
-  const months = [
-    'JAN',
-    'FEB',
-    'MAR',
-    'APR',
-    'MAY',
-    'JUN',
-    'JULY',
-    'AUG',
-    'SEPT',
-    'OCT',
-    'NOV',
-    'DEC'
-  ]
-  const month = new Date(post.published_at).getMonth()
-  post.published_at =
-    new Date(post.published_at).getDate() +
-    ' ' +
-    months[month] +
-    ' ' +
-    new Date(post.published_at).getFullYear()
+  post.published_at = formatDate(post.published_at)
   return (
     <PageLayout>
       <SEO title={post.title} />
-      {/* <SplashContainer>
-        <LogoHeader text={'Blog'} />
-      </SplashContainer> */}
       <div className='inner' id='article'>
         <article className='post-full post'>
           <header className='post-full-header'>
@@ -150,7 +125,6 @@ export default ({ data: { ghostPost: post } }) => {
           </section>
         </article>
       </div>
-      {/* </main> */}
     </PageLayout>
   )
 }
