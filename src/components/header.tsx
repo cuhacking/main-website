@@ -117,6 +117,8 @@ const Header = (props: { fixed: boolean }) => {
     },
     [isDark]
   )
+
+  // shows the black logo on "/blog/blog-slug" urls instead of the light one
   let Logo
 
   if (props.fixed || !window.location.pathname.includes('/blog/')) {
@@ -125,14 +127,10 @@ const Header = (props: { fixed: boolean }) => {
     Logo = <StyledLogo />
   }
 
-  console.log(window.location.pathname);
-
   return (
     <StyledHeader isOpen={isOpen} isDark={isDark} fixed={props.fixed}>
       <NavBar>
-        <Link to='/'>
-          {Logo}
-        </Link>
+        <Link to='/'>{Logo}</Link>
         <MenuButton isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
         <ButtonDiv>
           <NavButton
