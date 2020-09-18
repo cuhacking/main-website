@@ -40,7 +40,6 @@ export default ({ data: { ghostPost: post } }) => {
     'NOV',
     'DEC'
   ]
-  console.log(post)
   const month = new Date(post.published_at).getMonth()
   post.published_at =
     new Date(post.published_at).getDate() +
@@ -51,9 +50,9 @@ export default ({ data: { ghostPost: post } }) => {
   return (
     <PageLayout>
       <SEO title={post.title} />
-      <SplashContainer>
+      {/* <SplashContainer>
         <LogoHeader text={'Blog'} />
-      </SplashContainer>
+      </SplashContainer> */}
       <div className='inner' id='article'>
         <article className='post-full post'>
           <header className='post-full-header'>

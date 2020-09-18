@@ -5,6 +5,7 @@ import { useMatch } from '@reach/router'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import WordLogoDark from './wordLogoDark'
+import WordLogo from './wordLogo'
 import MenuButton from './menuButton'
 
 const StyledHeader = styled.header<{
@@ -57,7 +58,12 @@ const NavBar = styled.nav`
   }
 `
 
-const StyledLogo = styled(WordLogoDark)`
+const StyledLogoDark = styled(WordLogoDark)`
+  width: 140px;
+  height: 65px;
+`
+
+const StyledLogo = styled(WordLogo)`
   width: 140px;
   height: 65px;
 `
@@ -111,12 +117,21 @@ const Header = (props: { fixed: boolean }) => {
     },
     [isDark]
   )
+  let Logo
+
+  if (props.fixed || !window.location.pathname.includes('/blog/')) {
+    Logo = <StyledLogoDark />
+  } else {
+    Logo = <StyledLogo />
+  }
+
+  console.log(window.location.pathname);
 
   return (
     <StyledHeader isOpen={isOpen} isDark={isDark} fixed={props.fixed}>
       <NavBar>
         <Link to='/'>
-          <StyledLogo />
+          {Logo}
         </Link>
         <MenuButton isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
         <ButtonDiv>
