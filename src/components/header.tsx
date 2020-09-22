@@ -5,6 +5,7 @@ import { useMatch } from '@reach/router'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import WordLogoDark from './wordLogoDark'
+import WordLogo from './wordLogo'
 import MenuButton from './menuButton'
 
 const StyledHeader = styled.header<{
@@ -26,7 +27,7 @@ const StyledHeader = styled.header<{
   flex-direction: column;
   width: 100vw;
   /* change 10rem to 20rem when adding the nav options back*/
-  height: ${(props) => (props.isOpen ? '12rem' : '65px')};
+  height: ${(props) => (props.isOpen ? '15rem' : '65px')};
   justify-content: flex-start;
   align-items: center;
 
@@ -57,7 +58,12 @@ const NavBar = styled.nav`
   }
 `
 
-const StyledLogo = styled(WordLogoDark)`
+const StyledLogoDark = styled(WordLogoDark)`
+  width: 140px;
+  height: 65px;
+`
+
+const StyledLogo = styled(WordLogo)`
   width: 140px;
   height: 65px;
 `
@@ -112,12 +118,19 @@ const Header = (props: { fixed: boolean }) => {
     [isDark]
   )
 
+  // shows the black logo on "/blog/blog-slug" urls instead of the light one
+  let Logo
+
+  if (props.fixed || !window.location.pathname.includes('/blog/')) {
+    Logo = <StyledLogoDark />
+  } else {
+    Logo = <StyledLogo />
+  }
+
   return (
     <StyledHeader isOpen={isOpen} isDark={isDark} fixed={props.fixed}>
       <NavBar>
-        <Link to='/'>
-          <StyledLogo />
-        </Link>
+        <Link to='/'>{Logo}</Link>
         <MenuButton isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
         <ButtonDiv>
           <NavButton
@@ -143,7 +156,7 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             About
-          </NavButton>
+          </NavButton> */}
           <NavButton
             to='/blog'
             partiallyActive={true}
@@ -152,7 +165,7 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             Blog
-          </NavButton> */}
+          </NavButton>
         </ButtonDiv>
       </NavBar>
       <NavMenu>
@@ -179,7 +192,7 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           About
-        </NavButton>
+        </NavButton> */}
         <NavButton
           to='/blog'
           activeStyle={{
@@ -187,7 +200,7 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           Blog
-        </NavButton> */}
+        </NavButton>
       </NavMenu>
     </StyledHeader>
   )
