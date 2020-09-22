@@ -31,6 +31,10 @@ const CardImgTop = styled.img`
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   max-height: 400px;
+  
+  @media (min-width: 1200px) {
+    width: auto;
+  }
 `
 
 const Tag = styled.span`
@@ -38,6 +42,7 @@ const Tag = styled.span`
 `
 
 const ColMd8 = styled.div`
+  text-align: center;
   position: relative;
   width: 100%;
   min-height: 1px;
