@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WordLogo = (props: any) => (
+const WordLogo = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
   <svg
     width='832'
     height='181'

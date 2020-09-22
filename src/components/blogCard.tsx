@@ -41,11 +41,11 @@ const Small = styled.div`
 `
 
 type BlogCardProps = {
-  title: string
+  title: String
   reading_time: number
   published_at: Date
-  excerpt: string
-  feature_image: string
+  excerpt: String
+  feature_image: String
   slug: String
   tags: Array<any>
   primary_author_name: String
