@@ -1,4 +1,4 @@
-export function formatDate(published_at: any) {
+export function formatDate(published_at: Date) {
   const months = [
     'JAN',
     'FEB',
