@@ -67,9 +67,7 @@ export default ({ data }) => {
           <BlogCardFeatured
             title={posts[0].title}
             excerpt={
-              posts[0].custom_excerpt
-                ? posts[0].custom_excerpt
-                : posts[0].excerpt.substring(0, 175)
+              posts[0].custom_excerpt ?? posts[0].excerpt.substring(0, 175)
             }
             feature_image={posts[0].feature_image}
             reading_time={posts[0].reading_time}
@@ -103,11 +101,7 @@ export default ({ data }) => {
             <ColMd4 key={post.id}>
               <BlogCard
                 title={post.title}
-                excerpt={
-                  post.custom_excerpt
-                    ? post.custom_excerpt
-                    : post.excerpt.substring(0, 175)
-                }
+                excerpt={post.custom_excerpt ?? post.excerpt.substring(0, 175)}
                 feature_image={post.feature_image}
                 reading_time={post.reading_time}
                 slug={post.slug}

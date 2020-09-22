@@ -31,7 +31,7 @@ const CardImgTop = styled.img`
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   max-height: 400px;
-  
+
   @media (min-width: 1200px) {
     width: auto;
   }
@@ -108,10 +108,7 @@ const BlogCardFeatured = ({
   return (
     <Row>
       <ColMd8>
-        <CardImgTop
-          src={feature_image == null ? FeatureImage : feature_image}
-          alt='img'
-        />
+        <CardImgTop src={feature_image ?? FeatureImage} alt='img' />
       </ColMd8>
       <ColMd4>
         <Card className='mb-2'>
@@ -147,11 +144,7 @@ const BlogCardFeatured = ({
                       <div className='author-avatar'>
                         <img
                           className='author-profile-image'
-                          src={
-                            author.profile_image
-                              ? author.profile_image
-                              : ProfileIcon
-                          }
+                          src={author.profile_image ?? ProfileIcon}
                           alt='Ghost'
                         />
                       </div>

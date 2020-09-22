@@ -66,10 +66,7 @@ const BlogCard = ({
   return (
     <Card className='mb-2'>
       <Link to={'/blog/' + slug}>
-        <CardImgTop
-          src={feature_image == null ? FeatureImage : feature_image}
-          alt='img'
-        />
+        <CardImgTop src={feature_image ?? FeatureImage} alt='img' />
         <CardBody>
           {tags.map((tag: any) => (
             <Tag key='tag.name'>{tag.name.toUpperCase()}</Tag>
@@ -96,11 +93,7 @@ const BlogCard = ({
                     <div className='author-avatar'>
                       <img
                         className='author-profile-image'
-                        src={
-                          author.profile_image
-                            ? author.profile_image
-                            : ProfileIcon
-                        }
+                        src={author.profile_image ?? ProfileIcon}
                         alt='Ghost'
                       />
                     </div>

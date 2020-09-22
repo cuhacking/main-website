@@ -64,11 +64,7 @@ export default ({ data: { ghostPost: post } }) => {
                       <div className='author-avatar'>
                         <img
                           className='author-profile-image'
-                          src={
-                            author.profile_image
-                              ? author.profile_image
-                              : ProfileIcon
-                          }
+                          src={author.profile_image ?? ProfileIcon}
                           alt='Ghost'
                         />
                       </div>
