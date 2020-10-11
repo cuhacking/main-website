@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Authenticate package registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login https://ghcr.io -u ${GITHUB_ACTOR} --password-stdin
+        run: echo "${{ secrets.CONTAINER_TOKEN }}" | docker login https://ghcr.io -u ${GITHUB_ACTOR} --password-stdin
 
       - name: Set up ghost config
         env:
