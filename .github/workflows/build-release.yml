@@ -22,7 +22,7 @@ jobs:
         run: echo "$GHOST_CONFIG" > ghostConfig.json
 
       - name: Get tag
-        run: git describe --tags >> $BUILD_TAG
+        run: echo "BUILD_TAG=$(git describe --tags)" >> $BUILD_TAG
 
       - name: Build and tag image
         run: docker build -t ghcr.io/cuhacking/main-website:${BUILD_TAG} -t ghcr.io/cuhacking/main-website:latest .
