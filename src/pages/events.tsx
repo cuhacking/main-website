@@ -107,6 +107,12 @@ const events: Event[] = [
     description:
       'Git is the brains behind GitHub and is a powerful tool for managing code on your machine. In this workshop, participants will set up Git on their computer and learn how to use it to interact with GitHub. Hosted by Wal Wal.',
     category: 'technical'
+  },
+  {
+    title: 'Discussion with Ahmed Asif, Cloud Architect at Microsoft',
+    time: moment.tz('2020-10-21 18:00', 'America/Toronto'),
+    description: `On Wednesday October 21st at 6pm we will be having a discussion with Ahmed Asif, a Cloud Architect at Microsoft. Ahmed is gracious enough to spend one hour going over his experiences in the tech industry, which include:\n ⭐ Taking a hackathon project and running it as a startup for 7 months (with funding)\n⭐ Leading a team of interns at IBM\n ⭐ Being a product manager intern at Blackberry\n⭐ Architecting Microsoft Azure solutions at scale\n We will be hosting the event on Google Meet (link will be posted the day of!), so please come ready with your questions 😀`,
+    category: 'pd'
   }
 ]
 
@@ -233,7 +239,9 @@ const EventCard = (event: Event) => {
         {event.time.tz('America/Toronto').format('h:mma z • ') +
           event.time.format('D MMM YYYY').toUpperCase()}
       </EventTime>
-      <EventDescription>{event.description}</EventDescription>
+      {event.description.split('\n').map((line) => (
+        <EventDescription>{line}</EventDescription>
+      ))}
       {event.link && <EventLink link={event.link} />}
     </EventCardContainer>
   )
@@ -259,7 +267,7 @@ const EventsPage = () => {
         <LogoHeader text={'Events'} />
       </SplashContainer>
       <EventsContainer>
-        <EventsHeader>September</EventsHeader>
+        <EventsHeader>October</EventsHeader>
         {events
           .sort((a, b) => a.time.milliseconds() - b.time.millisecond())
           .filter((event) => event.time > moment())
