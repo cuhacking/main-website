@@ -212,12 +212,12 @@ const IndexPage = () => {
         <QuestionDivReversed ref={peopleRef} inView={peopleInView}>
           <Graphic src={peopleUrl} />
           <DialogueDiv>
-            <h1>Our Community</h1>
+            <h1>Our Community & Events</h1>
             <p>
               The cuHacking community has be growing ever since our first
-              hackathon in 2017. Now, we’re growing into something even larger
-              than just an annual event. Join the community to tag along on our
-              journey.
+              hackathon in 2017. Now, we have grown into something even larger
+              than just an annual event — we hack all year round! Join the community to tag along on our
+              adventures.
             </p>
             <Button external link='https://discord.gg/TGvYPnD'>
               Join Our Discord Server
@@ -231,9 +231,8 @@ const IndexPage = () => {
             <p>
               This year,
               <strong>cuHacking 2021 is going virtual!</strong>
-              We'll be hosting the event through our website and Discord server on
-              January 29-31. Be sure to join before then, however, since we'll be
-              running events all year round!
+              We'll be hosting the event through our website and Discord server from
+              January 29 to 31.
               <br>
               <br>
               Registration windows will be announced in the coming days.
