@@ -178,9 +178,9 @@ const IndexPage = () => {
           <Logo src={whiteLogoUrl} />
           <TextContainer>
             <p>
-              The cuHacking community is evolving.
+              Our hackathon is going virtual!
               <br />
-              Come be a part of the wave.
+              January 29–31.
             </p>
             {/* <Button link='/about'>Learn More</Button> */}
             <Button external link='https://discord.gg/TGvYPnD'>
@@ -212,12 +212,12 @@ const IndexPage = () => {
         <QuestionDivReversed ref={peopleRef} inView={peopleInView}>
           <Graphic src={peopleUrl} />
           <DialogueDiv>
-            <h1>Our Community</h1>
+            <h1>Our Community & Events</h1>
             <p>
               The cuHacking community has be growing ever since our first
-              hackathon in 2017. Now, we’re growing into something even larger
-              than just an annual event. Join the community to tag along on our
-              journey.
+              hackathon in 2017. Now we have grown even larger
+              than just an annual event — we hack all year round! Join the community to tag along on our
+              adventures.
             </p>
             <Button external link='https://discord.gg/TGvYPnD'>
               Join Our Discord Server
@@ -229,14 +229,13 @@ const IndexPage = () => {
           <DialogueDiv>
             <h1>What about the hackathon?</h1>
             <p>
-              We will still be holding large scale hackathons in the future.
-              However, given the current circumstances we face with the ongoing
-              pandemic,{' '}
-              <strong>cuHacking 2021 is postponed for the time being.</strong>
-              <br />
-              <br />
-              Don’t fret! We’re still creating opportunities for you grow and
-              develop yourself through many other online events and activities.
+              This year,
+              <strong>cuHacking 2021 is going virtual!</strong>
+              We'll be hosting the event through our website and Discord server from
+              January 29 to 31.
+              <br>
+              <br>
+              Registration windows will be announced in the coming days.
             </p>
             {/* <Button link='/about'>Read More</Button> */}
           </DialogueDiv>
