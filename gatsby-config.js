@@ -41,9 +41,9 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-ghost`,
-      options: ghostConfig
-    }
+    // {
+    //   resolve: `gatsby-source-ghost`,
+    //   options: ghostConfig
+    // }
   ]
 }
