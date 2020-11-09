@@ -229,8 +229,7 @@ const IndexPage = () => {
           <DialogueDiv>
             <h1>What about the hackathon?</h1>
             <p>
-              This year,
-              <strong>cuHacking 2021 is going virtual!</strong>
+              This year, <strong>cuHacking 2021 is going virtual! </strong> 
               We'll be hosting the event through our website and Discord server from
               January 29 to 31.
               <br />
