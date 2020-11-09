@@ -180,7 +180,7 @@ const IndexPage = () => {
             <p>
               Our hackathon is going virtual!
               <br />
-              January 29-31.
+              January 29–31.
             </p>
             {/* <Button link='/about'>Learn More</Button> */}
             <Button external link='https://discord.gg/TGvYPnD'>
