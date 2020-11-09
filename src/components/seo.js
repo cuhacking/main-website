@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script async defer data-domain="cuhacking.com" src="http://analytics.cuhacking.com/js/plausible.js"></script>
+    </Helmet>
   )
 }
 
