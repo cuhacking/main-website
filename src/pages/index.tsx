@@ -178,9 +178,9 @@ const IndexPage = () => {
           <Logo src={whiteLogoUrl} />
           <TextContainer>
             <p>
-              The cuHacking community is evolving.
+              cuHacking 2021 is going virtual!
               <br />
-              Come be a part of the wave.
+              January 29-31.
             </p>
             {/* <Button link='/about'>Learn More</Button> */}
             <Button external link='https://discord.gg/TGvYPnD'>
@@ -229,14 +229,14 @@ const IndexPage = () => {
           <DialogueDiv>
             <h1>What about the hackathon?</h1>
             <p>
-              We will still be holding large scale hackathons in the future.
-              However, given the current circumstances we face with the ongoing
-              pandemic,{' '}
-              <strong>cuHacking 2021 is postponed for the time being.</strong>
-              <br />
-              <br />
-              Don’t fret! We’re still creating opportunities for you grow and
-              develop yourself through many other online events and activities.
+              This year,
+              <strong>cuHacking 2021 is going virtual!</strong>
+              We'll be hosting the event through our website and Discord server on
+              January 29-31. Be sure to join before then, however, since we'll be
+              running events all year round!
+              <br>
+              <br>
+              Registration windows will be announced in the coming days.
             </p>
             {/* <Button link='/about'>Read More</Button> */}
           </DialogueDiv>
