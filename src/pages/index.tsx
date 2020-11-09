@@ -215,7 +215,7 @@ const IndexPage = () => {
             <h1>Our Community & Events</h1>
             <p>
               The cuHacking community has be growing ever since our first
-              hackathon in 2017. Now, we have grown into something even larger
+              hackathon in 2017. Now we have grown even larger
               than just an annual event — we hack all year round! Join the community to tag along on our
               adventures.
             </p>
