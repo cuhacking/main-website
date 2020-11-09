@@ -178,7 +178,7 @@ const IndexPage = () => {
           <Logo src={whiteLogoUrl} />
           <TextContainer>
             <p>
-              cuHacking 2021 is going virtual!
+              Our hackathon is going virtual!
               <br />
               January 29-31.
             </p>
