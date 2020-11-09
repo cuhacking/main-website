@@ -233,8 +233,8 @@ const IndexPage = () => {
               <strong>cuHacking 2021 is going virtual!</strong>
               We'll be hosting the event through our website and Discord server from
               January 29 to 31.
-              <br>
-              <br>
+              <br />
+              <br />
               Registration windows will be announced in the coming days.
             </p>
             {/* <Button link='/about'>Read More</Button> */}
