@@ -22,7 +22,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div id='faux-root'>
       <Header fixed={false} />
-      <Header fixed={true} />
+      {/* <Header fixed={true} /> */}
       <Main>{children}</Main>
       <Footer />
     </div>

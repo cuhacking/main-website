@@ -258,14 +258,14 @@ const Footer = () => (
           </SocialDiv>
         </ContactPrompt>
         <NavMenu>
-          <NavButton
+          {/* <NavButton
             to='/'
             activeStyle={{
               color: 'var(--purple)'
             }}
           >
             Home
-          </NavButton>
+          </NavButton> */}
           {/* <NavButton
             to='/about'
             activeStyle={{
@@ -274,14 +274,14 @@ const Footer = () => (
           >
             About
           </NavButton> */}
-          <NavButton
+          {/* <NavButton
             to='/events'
             activeStyle={{
               color: 'var(--purple)'
             }}
           >
             Events
-          </NavButton>
+          </NavButton> */}
           {/* <NavButton
             to='/blog'
             activeStyle={{
