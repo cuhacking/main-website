@@ -118,9 +118,9 @@ const Header = (props: { fixed: boolean }) => {
         <Link to='/'>
           <StyledLogo />
         </Link>
-        <MenuButton isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
+        {/* <MenuButton isOpen={isOpen} onClick={() => setOpen(!isOpen)} /> */}
         <ButtonDiv>
-          <NavButton
+          {/* <NavButton
             to='/'
             activeStyle={{
               color: 'var(--purple)'
@@ -135,7 +135,7 @@ const Header = (props: { fixed: boolean }) => {
             }}
           >
             Events
-          </NavButton>
+          </NavButton> */}
           {/* <NavButton
             to='/about'
             activeStyle={{
@@ -155,7 +155,7 @@ const Header = (props: { fixed: boolean }) => {
           </NavButton> */}
         </ButtonDiv>
       </NavBar>
-      <NavMenu>
+      {/* <NavMenu>
         <NavButton
           to='/'
           activeStyle={{
@@ -172,7 +172,7 @@ const Header = (props: { fixed: boolean }) => {
         >
           Events
         </NavButton>
-        {/* <NavButton
+        <NavButton
           to='/about'
           activeStyle={{
             color: 'var(--purple)'
@@ -187,8 +187,8 @@ const Header = (props: { fixed: boolean }) => {
           }}
         >
           Blog
-        </NavButton> */}
-      </NavMenu>
+        </NavButton>
+      </NavMenu> */}
     </StyledHeader>
   )
 }

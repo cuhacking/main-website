@@ -182,10 +182,7 @@ const IndexPage = () => {
               <br />
               January 29–31.
             </p>
-            {/* <Button link='/about'>Learn More</Button> */}
-            <Button external link='https://discord.gg/TGvYPnD'>
-              Join Our Discord Server
-            </Button>
+            <Button link='https://2021.cuhacking.com/'>Event Page</Button>
           </TextContainer>
         </Splash>
       </SplashContainer>
@@ -215,9 +212,9 @@ const IndexPage = () => {
             <h1>Our Community & Events</h1>
             <p>
               The cuHacking community has be growing ever since our first
-              hackathon in 2017. Now we have grown even larger
-              than just an annual event — we hack all year round! Join the community to tag along on our
-              adventures.
+              hackathon in 2017. Now we have grown even larger than just an
+              annual event — we hack all year round! Join the community to tag
+              along on our adventures.
             </p>
             <Button external link='https://discord.gg/TGvYPnD'>
               Join Our Discord Server
@@ -229,14 +226,14 @@ const IndexPage = () => {
           <DialogueDiv>
             <h1>What about the hackathon?</h1>
             <p>
-              This year, <strong>cuHacking 2021 is going virtual! </strong> 
-              We'll be hosting the event through our website and Discord server from
-              January 29 to 31.
+              This year, <strong>cuHacking 2021 is going virtual! </strong>
+              We'll be hosting the event through our website and Discord server
+              from January 29 to 31.
               <br />
               <br />
-              Registration windows will be announced in the coming days.
+              Registration is open! Don't wait.
             </p>
-            {/* <Button link='/about'>Read More</Button> */}
+            <Button link='https://2021.cuhacking.com/'>Register Now!</Button>
           </DialogueDiv>
         </QuestionDiv>
       </QuestionsContainer>
